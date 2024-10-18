@@ -1,0 +1,500 @@
+/* Estilos generales */
+body {
+    font-family: "Afacad Flux", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    background: linear-gradient(to right, #e0eafc, #cfdef3);
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    padding-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    transition: background-color 0.5s ease;
+}
+hr {
+    border: 0; /* Eliminar el borde predeterminado */
+    height: 2px; /* Grosor de la línea */
+    background-color: #ccc; /* Color de la línea */
+    margin: 40px 0; /* Espacio arriba y abajo de la línea */
+}
+
+/* Navbar estilos */
+nav {
+    background-color: #333; /* Color de fondo del navbar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Alinea los elementos al centro */
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    width: 100%; 
+}
+
+nav ul li {
+    margin: 0 15px;
+    background-color: #444;
+}
+
+nav ul li.logo {
+    margin-right: auto;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #fff; /* Color del texto */
+    padding: 10px 15px;
+    font-size: 18px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: all 0.3s ease-in-out;
+    background-color: #2e2e2e;
+}
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 50px;
+    text-decoration: none;
+    color: #6cca29  !important;/* Ejemplo de color: un tono naranja */
+}
+.logo a{
+    font-size: 24px;
+    font-weight: bold;
+    color: #bac2bb;
+}
+
+nav ul li a.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #252725; /* Color del logo */
+    text-decoration: none;
+    position: absolute; /* Posiciona el logo de manera absoluta */
+    left: 20px; /* Ajusta la distancia desde el borde izquierdo */
+}
+
+nav ul li a:hover {
+    background-color: #c5cac5; /* Color de fondo al hacer hover */
+    color: #fff;
+    border-radius: 5px;
+}
+nav ul li a .fa-instagram {
+    color: #C13584; /* Color del ícono de Instagram */
+    font-size: 20px;
+}
+.instagram-link i {
+    font-size: 24px; /* Tamaño del ícono */
+    color: #000; /* Cambia este color si lo deseas */
+    transition: transform 0.3s ease, color 0.3s ease; /* Efecto suave */
+}
+
+.instagram-link i:hover {
+    transform: scale(1.2); /* Efecto hover que agranda el ícono */
+    color: #E1306C; /* Cambia el color al pasar el mouse (color de Instagram) */
+}
+header h1, h2 {
+    color: #304231; /* Color para los títulos */
+    text-align: center;
+}
+p, ul {
+    font-size: 18px; /* Tamaño de fuente más legible */
+    line-height: 1.6;
+}
+.btn-cta {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#planes {
+    text-align: center;
+    padding: 40px 0;
+}
+#currencyDisplay {
+    margin: 20px;
+    font-size: 20px;
+    color: #fff; /* Cambia el color según tu diseño */
+}
+
+/* Estilo para cada plan */
+.plan {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px; /* Reduce el ancho máximo para centrar mejor */
+    margin: 20px auto; /* Centra los planes horizontalmente */
+    text-align: left; /* Alinea el texto a la izquierda */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Efecto suave al pasar el mouse */
+}
+
+.plan, #cart-items {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.plan h2 {
+    margin-top: 0;
+    color: #2a9d8f;
+}
+
+.plan p, #cart-items div {
+    margin: 10px 0;
+}
+/* Estilo para el título */
+#planes h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Estilo para las diferencias entre los planes */
+.diferencias-planes {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Estilo para los elementos individuales de los planes */
+.diferencias-planes p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Resaltado para los nombres de los planes */
+.diferencias-planes strong {
+    color: #4CAF50;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Estilo para cada línea del plan */
+.diferencias-planes li {
+    margin-bottom: 10px;
+    list-style-type: none;
+    position: relative;
+    padding-left: 25px;
+}
+
+/* Añadir un ícono o círculo en lugar del guion */
+.diferencias-planes li::before {
+    content: "\2022";
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* Efecto hover en los elementos del plan */
+.diferencias-planes p:hover {
+    background-color: #e0f7fa;
+    padding-left: 10px;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+}
+
+
+button, a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2a9d8f;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+button:hover, a:hover {
+    background-color: #21867a;
+}
+
+a {
+    text-decoration: none;
+    color: #3a3e3a;
+}
+
+a:hover {
+    color: #4CAF50; /* Efecto de cambio de color en hover */
+}
+
+button {
+    margin-top: 10px;
+}
+
+
+/* Carrito */
+#empty-cart {
+    background-color: #e63946;
+    margin-bottom: 20px;
+}
+
+#empty-cart:hover {
+    background-color: #d62828;
+}
+
+#cart-items {
+    display: flex;
+    flex-direction: column;
+}
+
+#cart-items div {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#total-price {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #333;
+}
+
+p {
+    color: #555;
+}
+
+/* Estilos para el formulario de pago */
+form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    box-shadow: 0 0 8px rgba(72, 187, 120, 0.8);
+    outline: none;
+}
+
+
+#card-element {
+    background-color: #f8f8f8;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#submit {
+    margin-top: 20px;
+    background-color: #2a9d8f;
+}
+
+#error-message {
+    color: red;
+    margin-top: 10px;
+}
+section {
+    padding: 50px;
+    margin: 20px auto;
+    max-width: 1200px;
+    background-color: white; /* Fondo blanco para las secciones */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    border-radius: 10px; /* Bordes redondeados */
+    transition: transform 0.3s ease; /* Efecto suave en las secciones */
+}
+section:hover {
+    transform: translateY(-10px); /* Efecto de levantar la sección al hacer hover */
+}
+
+/* Estilos para la sección Quién Soy */
+.section-quien-soy {
+    padding: 50px 20px;
+    background-color: #f4f4f4; /* Fondo gris claro */
+    color: #333;
+}
+
+.section-quien-soy h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #4CAF50; /* Verde */
+    margin-bottom: 20px;
+}
+
+.quien-soy-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.quien-soy-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.quien-soy-text h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+.quien-soy-text ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.quien-soy-text ul li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.quien-soy-text blockquote {
+    font-style: italic;
+    color: #555;
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-left: 4px solid #4CAF50;
+    background-color: #fff;
+}
+
+.quien-soy-text strong {
+    color: #4CAF50;
+}
+#fotogaleria h1 {
+    text-align: center; /* Centrado del título */
+    margin: 60px 0 30px; /* Espaciado superior aumentado a 60px */
+    color: #333; /* Color de texto */
+    font-family: Arial, sans-serif; /* Fuente */
+}
+#contacto h1 {
+    text-align: center; /* Centrado del título */
+    margin: 60px 0; /* Espaciado superior aumentado a 60px */
+}
+
+/* Footer */
+/* Footer Minimalista */
+/* Footer Alargado */
+/* Estilo del footer */
+footer {
+    background-color: #333; /* Color de fondo del footer */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Estilo para los enlaces del footer */
+.footer-section.links ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Centrar los enlaces */
+}
+
+.footer-section.links ul li {
+    margin: 0 10px; /* Espacio entre los enlaces */
+}
+
+.footer-section.links ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em; /* Tamaño más pequeño */
+}
+
+.footer-section.links ul li a:hover {
+    color: #f4f4f4; /* Efecto hover */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        flex-basis: 100%;
+    }
+
+    .footer-section ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        margin: 10px 0;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .plan, #cart-items {
+        width: 90%;
+    }
+}

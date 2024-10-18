@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fotogalería</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #fotogaleria {
+            max-width: 1200px; /* Ancho máximo */
+            margin: 0 auto; /* Centrado horizontal */
+            padding: 20px; /* Espaciado interno */
+            background-color: #f4f4f4; /* Color de fondo suave */
+            border-radius: 10px; /* Bordes redondeados */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+
+        #fotogaleria h1 {
+            text-align: center; /* Centrado del título */
+            margin: 60px 0 30px; /* Espaciado superior aumentado a 60px */
+            color: #333; /* Color de texto */
+            font-family: Arial, sans-serif; /* Fuente */
+        }
+
+        .gallery {
+            display: grid; /* Uso de grid */
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Columnas flexibles */
+            gap: 20px; /* Espacio entre las imágenes */
+        }
+
+        .gallery-item {
+            background-color: #fff; /* Fondo blanco para los bloques */
+            border-radius: 8px; /* Bordes redondeados */
+            overflow: hidden; /* Oculta desbordamientos */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones */
+        }
+
+        .gallery-item img {
+            width: 100%; /* Imagen ocupa el ancho completo del bloque */
+            height: auto; /* Mantiene la proporción de la imagen */
+            object-fit: cover; /* Mantiene la proporción de la imagen */
+            display: block; /* Elimina espacios extra */
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05); /* Aumenta ligeramente al pasar el ratón */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra más intensa */
+        }
+
+        @media (max-width: 1200px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Más columnas en pantallas medianas */
+            }
+        }
+
+        @media (max-width: 800px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Dos columnas en pantallas pequeñas */
+            }
+        }
+
+        @media (max-width: 500px) {
+            .gallery {
+                grid-template-columns: 1fr; /* Una sola columna en pantallas muy pequeñas */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="logo">THE GYM</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="quien-soy.html">Quién Soy</a></li>
+            <li><a href="planes.html">Planes</a></li>
+            <li><a href="fotogaleria.html">Fotogalería</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="https://instagram.com" target="_blank" class="instagram-link">
+                <i class="fab fa-instagram"></i>
+            </a></li> 
+        </ul>
+    </nav>
+
+    <section id="fotogaleria">
+        <h1>Fotogalería</h1>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="./imagenes/f1.jpg" alt="Descripción de la imagen 1">
+            </div>
+            <div class="gallery-item">
+                <img src="./imagenes/f2.jpg" alt="Descripción de la imagen 2">
+            </div>
+            <div class="gallery-item">
+                <img src="./imagenes/f3.jpg" alt="Descripción de la imagen 3">
+            </div>
+            <div class="gallery-item">
+                <img src="./imagenes/f4.jpg" alt="Descripción de la imagen 4">
+            </div>
+            <div class="gallery-item">
+                <img src="./imagenes/f5.jpg" alt="Descripción de la imagen 5">
+            </div>
+            <div class="gallery-item">
+                <img src="./imagenes/fondo.jpg" alt="Descripción de la imagen 6">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>THE GYM</h3>
+                <p>Transforma tu cuerpo con nuestros entrenamientos personalizados. ¡Únete a nosotros y alcanza tus objetivos!</p>
+            </div>
+            <div class="footer-section links">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quien-soy.html">Quién Soy</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="fotogaleria.html">Fotogalería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 THE GYM | Todos los derechos reservados
+        </div>
+    </footer>
+</body>
+</html>

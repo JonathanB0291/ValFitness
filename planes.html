@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes de Entrenamiento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para el selector de moneda */
+        .currency-selector {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="logo">THE GYM</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="quien-soy.html">Quién Soy</a></li>
+            <li><a href="planes.html">Planes</a></li>
+            <li><a href="fotogaleria.html">Fotogalería</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="https://instagram.com" target="_blank" class="instagram-link">
+                <i class="fab fa-instagram"></i>
+            </a></li> 
+        </ul>
+    </nav>
+
+    <h1>Planes de Entrenamiento</h1>
+    
+    <div class="currency-selector">
+        <label for="currency">Selecciona una moneda:</label>
+        <select id="currency">
+            <option value="usd">Dólar ($)</option>
+            <option value="eur">Euro (€)</option>
+            <option value="ars">Peso Argentino (ARS)</option>
+        </select>
+    </div>
+    
+    <div class="plan" data-price-usd="30" data-price-eur="27" data-price-ars="10000">
+        <h2>Plan Básico</h2>
+        <p class="price"></p>
+        <p>Incluye acceso a rutinas básicas.</p>
+        <button class="add-to-cart" data-plan="basico" data-price="30">Agregar al carrito</button>
+    </div>
+
+    <div class="plan" data-price-usd="50" data-price-eur="45" data-price-ars="15000">
+        <h2>Plan Intermedio</h2>
+        <p class="price"></p>
+        <p>Acceso a rutinas avanzadas y consultas personalizadas.</p>
+        <button class="add-to-cart" data-plan="intermedio" data-price="50">Agregar al carrito</button>
+    </div>
+
+    <div class="plan" data-price-usd="70" data-price-eur="63" data-price-ars="21000">
+        <h2>Plan Avanzado</h2>
+        <p class="price"></p>
+        <p>Incluye todo lo anterior más coaching individual.</p>
+        <button class="add-to-cart" data-plan="avanzado" data-price="70">Agregar al carrito</button>
+    </div>
+
+    <a href="carrito.html">Ir al Carrito</a>
+
+    <script src="app.js"></script>
+    <script>
+        const currencySelector = document.getElementById('currency');
+        const plans = document.querySelectorAll('.plan');
+
+        // Función para actualizar los precios según la moneda seleccionada
+        function updatePrices() {
+            const selectedCurrency = currencySelector.value;
+
+            plans.forEach(plan => {
+                const priceElement = plan.querySelector('.price');
+                const price = plan.getAttribute(`data-price-${selectedCurrency}`);
+                
+                switch (selectedCurrency) {
+                    case 'usd':
+                        priceElement.textContent = `Precio: $${price}`;
+                        break;
+                    case 'eur':
+                        priceElement.textContent = `Precio: €${price}`;
+                        break;
+                    case 'ars':
+                        priceElement.textContent = `Precio: $${price} ARS`;
+                        break;
+                }
+            });
+        }
+
+        // Actualizar precios al cargar la página
+        updatePrices();
+
+        // Actualizar precios al cambiar la moneda
+        currencySelector.addEventListener('change', updatePrices);
+    </script>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>THE GYM</h3>
+                <p>Transforma tu cuerpo con nuestros entrenamientos personalizados. ¡Únete a nosotros y alcanza tus objetivos!</p>
+            </div>
+            <div class="footer-section links">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quien-soy.html">Quién Soy</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="fotogaleria.html">Fotogalería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 THE GYM | Todos los derechos reservados
+        </div>
+    </footer>
+</body>
+</html>

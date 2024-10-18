@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilo para el selector de moneda */
+        .currency-selector {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="logo">THE GYM</a></li>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="quien-soy.html">Quién Soy</a></li>
+            <li><a href="planes.html">Planes</a></li>
+            <li><a href="fotogaleria.html">Fotogalería</a></li>
+            <li><a href="carrito.html">Carrito</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+            <li><a href="https://instagram.com" target="_blank" class="instagram-link">
+                <i class="fab fa-instagram"></i>
+            </a></li> 
+        </ul>
+    </nav>
+
+    <h1>Tu Carrito</h1>
+    
+    <div class="currency-selector">
+        <label for="currency">Selecciona una moneda:</label>
+        <select id="currency">
+            <option value="usd">Dólar ($)</option>
+            <option value="eur">Euro (€)</option>
+            <option value="ars">Peso Argentino (ARS)</option>
+        </select>
+    </div>
+
+    <div id="cart-items"></div>
+    <p>Total: <span id="total-price"></span></p>
+
+    <button id="empty-cart">Vaciar Carrito</button>
+
+    <a href="index.html">Volver al Inicio</a>
+    <a href="checkout.html">Finalizar Compra</a>
+
+    <script>
+        const cartItemsContainer = document.getElementById('cart-items');
+        const totalPriceElement = document.getElementById('total-price');
+        const emptyCartButton = document.getElementById('empty-cart');
+        const currencySelector = document.getElementById('currency');
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let total = 0;
+
+        function renderCart() {
+            cartItemsContainer.innerHTML = '';
+            total = 0; // Reset total before calculating
+
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p>El carrito está vacío</p>';
+            } else {
+                cart.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    const priceInSelectedCurrency = getPriceInSelectedCurrency(item);
+                    itemElement.textContent = `${item.plan} - ${priceInSelectedCurrency} x ${item.quantity}`;
+                    cartItemsContainer.appendChild(itemElement);
+                    total += item.price * item.quantity; // Calculando total en dólares
+                });
+                const totalInSelectedCurrency = getPriceInSelectedCurrency({ price: total });
+                totalPriceElement.textContent = totalInSelectedCurrency;
+            }
+        }
+
+        function getPriceInSelectedCurrency(item) {
+            const selectedCurrency = currencySelector.value;
+            let price;
+
+            switch (selectedCurrency) {
+                case 'usd':
+                    price = item.price; // Precio original en USD
+                    return `$${price.toFixed(2)}`;
+                case 'eur':
+                    price = item.price * 0.9; // Ejemplo de conversión de USD a EUR
+                    return `€${price.toFixed(2)}`;
+                case 'ars':
+                    price = item.price * 350; // Ejemplo de conversión de USD a ARS
+                    return `$${price.toFixed(2)} ARS`;
+                default:
+                    return `$${item.price.toFixed(2)}`;
+            }
+        }
+
+        currencySelector.addEventListener('change', renderCart); // Actualiza carrito al cambiar moneda
+
+        emptyCartButton.addEventListener('click', () => {
+            cart = [];
+            localStorage.removeItem('cart');
+            total = 0;
+            renderCart();
+            totalPriceElement.textContent = total;
+            alert('El carrito ha sido vaciado');
+        });
+
+        renderCart();
+    </script>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>THE GYM</h3>
+                <p>Transforma tu cuerpo con nuestros entrenamientos personalizados. ¡Únete a nosotros y alcanza tus objetivos!</p>
+            </div>
+            <div class="footer-section links">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="quien-soy.html">Quién Soy</a></li>
+                    <li><a href="planes.html">Planes</a></li>
+                    <li><a href="fotogaleria.html">Fotogalería</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2024 THE GYM | Todos los derechos reservados
+        </div>
+    </footer>
+</body>
+</html>
