@@ -85,6 +85,24 @@ hr {
     background-color: #ccc; /* Color de la línea */
     margin: 40px 0; /* Espacio arriba y abajo de la línea */
 }
+.banner {
+    background: linear-gradient(135deg, #f0f0f0, #f0f0f0);
+    padding: 50px;
+    text-align: center;
+    border-radius: 10px;
+    color: #191616;
+}
+.banner h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+.banner p {
+    font-size: 1.5em;
+    margin: 20px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+
 
 /* Navbar estilos */
 nav {
@@ -502,6 +520,35 @@ p {
     color: #333335;
     font-size: 20px;
 }
+.carrito {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none; /* Eliminar subrayado */
+    border-radius: 25px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones para un efecto suave */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Sombra para destacar el botón */
+}
+
+.carrito:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.carrito:active {
+    transform: translateY(0); /* El botón regresa a su lugar al hacer clic */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Reducir la sombra */
+}
 
 /* Estilos para el formulario de pago */
 form {
@@ -561,69 +608,68 @@ section:hover {
 
 /* Estilos para la sección Quién Soy */
 .section-quien-soy {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: #f4f4f4; /* Fondo gris claro */
-    color: #333;
+    background: linear-gradient(135deg, #f0f0f0, #f0f0f0); /* Degradado en tonos grises */
+    padding: 50px;
+    color: #333; /* Color de texto oscuro para contraste */
+    font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
+    font-size: 1rem;
+    text-align: left;
 }
 
 .section-quien-soy h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
     text-align: center;
-    font-size: 36px;
-    color: #585958; 
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.section-quien-soy p {
+    font-size: 1em;
     margin-bottom: 20px;
-    margin-top: 50px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.quien-soy-content {
-    background-color: #fff; /* Cuadro blanco */
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-}
-.quien-soy-text {
-    font-size: 16px;
-    line-height: 1.6;
-    color: #333;
+.section-quien-soy h3 {
+    font-size: 1.8em;
+    margin-top: 30px;
+    color: #8d8881; /* Un toque de color cálido para destacar */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-.quien-soy-text p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
+.section-quien-soy ul {
+    list-style-type: none;
+    padding-left: 0;
 }
 
-.quien-soy-text h3 {
-    font-size: 1.5rem;
-    margin-top: 20px;
-    color: #333;
+.section-quien-soy ul li {
+    margin-bottom: 15px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
 }
 
-.quien-soy-text ul {
-    list-style: disc;
-    padding-left: 20px;
+.section-quien-soy ul li::before {
+    content: "\f058";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+    color: #FF8C00; /* Icono en color naranja para coherencia */
 }
 
-.quien-soy-text ul li {
-    margin-bottom: 10px;
-    font-size: 1.1rem;
-}
-
-.quien-soy-text blockquote {
-    font-style: italic;
-    color: #555;
+.section-quien-soy blockquote {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-left: 5px solid #FF8C00; /* Cita con borde naranja */
+    padding: 20px;
     margin: 20px 0;
-    padding: 10px 20px;
-    border-left: 4px solid #4CAF50;
-    background-color: #fff;
+    font-size: 1.5em;
+    text-align: center;
+    font-style: italic;
+    color: #FF8C00;
 }
 
-.quien-soy-text strong {
-    color: #0b0b0b;
+.blockquote:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 0.5s ease;
 }
 #fotogaleria h1 {
     text-align: center; /* Centrado del título */
