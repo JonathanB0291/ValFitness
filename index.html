@@ -14,80 +14,27 @@
 <body>
     <nav>
         <ul>
-            <li><a href="index.html" class="logo">VALMOLINA fitness</a></li>
+            <li><a href="index.html" class="logo"><img src="./imagenes/logotipo (2).png" alt=""></a></li>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="quien-soy.html">Quién Soy</a></li>
             <li><a href="planes.html">Planes</a></li>
             <li><a href="fotogaleria.html">Fotogalería</a></li>
             <li><a href="carrito.html">Carrito</a></li>
             <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="https://instagram.com" target="_blank" class="instagram-link">
+            <li><a href="https://www.instagram.com/valmolinafitness/profilecard/?igsh=MXJ6Mm11MXVpbWVqbA==" target="_blank" class="instagram-link">
                 <i class="fab fa-instagram"></i>
             </a></li> 
         </ul>
     </nav>
-    <div id="currencyDisplay">Cargando moneda...</div>
-
-<script>
-    const currencyRates = {
-        "USD": 1, // Dólar estadounidense
-        "EUR": 0.85, // Euro
-        "ARS": 100 // Peso argentino (ajusta según la tasa real)
-    };
-
-    // Función para obtener la ubicación del usuario
-    async function getLocation() {
-        try {
-            const response = await fetch('https://ipinfo.io?token=tu_token'); // Reemplaza "tu_token" con tu token
-            const data = await response.json();
-            const country = data.country;
-
-            // Cambiar la moneda según el país
-            changeCurrency(country);
-        } catch (error) {
-            console.error('Error al obtener la ubicación:', error);
-        }
-    }
-
-    // Función para cambiar la moneda según el país
-    function changeCurrency(country) {
-        let currency = "USD"; // Moneda predeterminada
-
-        switch (country) {
-            case 'US':
-                currency = "USD";
-                break;
-            case 'AR':
-                currency = "ARS";
-                break;
-            case 'ES':
-            case 'FR':
-                currency = "EUR";
-                break;
-            // Agrega más países y sus respectivas monedas según sea necesario
-            default:
-                currency = "USD"; // Moneda predeterminada si no se encuentra
-        }
-
-        // Actualiza el valor en la página
-        updateCurrencyDisplay(currency);
-    }
-
-    // Función para actualizar la visualización de la moneda
-    function updateCurrencyDisplay(currency) {
-        const currencyElement = document.getElementById('currencyDisplay');
-        currencyElement.textContent = `Moneda actual: ${currency}`;
-        // También puedes cambiar el formato de precios aquí según la moneda
-    }
-
-    // Llama a la función de ubicación al cargar la página
-    window.onload = getLocation;
-</script>
-
-
+    
     <header>
         <h1>Bienvenido a VALMOLINA fitness</h1>
-        <p>Tu mejor opción para alcanzar tus objetivos de entrenamiento</p>
+        <p>"Ejecutar los ejercicios de
+            manera adecuada es
+            esencial para cosechar los
+            máximos beneficios y
+            eludir lesiones."
+            </p>
     </header>
     <!-- Sección de Inicio -->
 <section id="inicio" class="section-inicio">
@@ -95,7 +42,7 @@
         <div class="banner">
             <h1>Transforma tu Vida con el Entrenamiento Personalizado</h1>
             <p>Descubre tu potencial y alcanza tus objetivos con un plan diseñado solo para ti.</p>
-            <a href="#planes" class="btn-cta">Empieza Ahora</a>
+            <a href="./planes.html" class="btn-cta">Empieza Ahora</a>
         </div>
 
         <hr>
@@ -113,7 +60,7 @@
                     <li>Acceso a videos de ejercicios</li>
                     <li>Soporte por correo electrónico</li>
                 </ul>
-                <a href="#planes" class="btn-cta">Ver Más</a>
+                <a href="./planes.html" class="btn-cta">Ver Más</a>
             </div>
             <div class="servicio">
                 <h3>Plan Avanzado</h3>
@@ -123,7 +70,7 @@
                     <li>Seguimiento semanal</li>
                     <li>Asesoría en nutrición</li>
                 </ul>
-                <a href="#planes" class="btn-cta">Ver Más</a>
+                <a href="./planes.html" class="btn-cta">Ver Más</a>
             </div>
             <div class="servicio">
                 <h3>Plan Premium</h3>
@@ -133,7 +80,7 @@
                     <li>Plan nutricional personalizado</li>
                     <li>Acceso ilimitado a clases virtuales</li>
                 </ul>
-                <a href="#planes" class="btn-cta">Ver Más</a>
+                <a href="./planes.html" class="btn-cta">Ver Más</a>
             </div>
         </div>
     </div>
@@ -141,7 +88,7 @@
 
 <hr>
         
-<section id="articulos">
+<section id="articulos" class="section-articulos"> 
     <h2>Artículos Recomendados</h2>
     
     <article>
@@ -177,62 +124,11 @@
     </div>
 </section>
 
-
-    <section id="planes">
-        <h1>Planes de Entrenamiento</h1>
-        <p>Elige el plan que mejor se adapte a tus necesidades y objetivos. Cada plan está diseñado para ofrecer un enfoque personalizado y efectivo.</p>
-
-        <div class="plan" id="basico">
-            <h2>Plan Básico</h2>
-            <p>El Plan Básico es ideal para principiantes que desean iniciar su camino hacia un estilo de vida más saludable. Incluye:</p>
-            <ul>
-                <li>2 sesiones de entrenamiento por semana</li>
-                <li>Acceso a recursos en línea</li>
-                <li>Asesoramiento nutricional básico</li>
-            </ul>
-            <p><strong>Precio: $10 al mes</strong></p>
-        </div>
-
-        <div class="plan" id="avanzado">
-            <h2>Plan Avanzado</h2>
-            <p>El Plan Avanzado está diseñado para aquellos que ya tienen experiencia en el entrenamiento y desean llevar su fitness al siguiente nivel. Incluye:</p>
-            <ul>
-                <li>4 sesiones de entrenamiento por semana</li>
-                <li>Planificación nutricional personalizada</li>
-                <li>Acceso a una comunidad de apoyo</li>
-            </ul>
-            <p><strong>Precio: $20 al mes</strong></p>
-        </div>
-
-        <div class="plan" id="premium">
-            <h2>Plan Premium</h2>
-            <p>El Plan Premium es la opción más completa, ideal para quienes buscan un entrenamiento intensivo y un apoyo constante. Incluye:</p>
-            <ul>
-                <li>Entrenamiento personalizado 5 días a la semana</li>
-                <li>Plan nutricional a medida</li>
-                <li>Acceso ilimitado a clases grupales</li>
-                <li>Asesoría personal constante</li>
-            </ul>
-            <p><strong>Precio: $30 al mes</strong></p>
-        </div>
-
-        <section id="planes">
-            <h2>Diferencias entre los Planes</h2>
-            <div class="diferencias-planes">
-                <p><strong>Plan Básico</strong>: Ideal para quienes recién comienzan, con menos sesiones y sin asesoría personalizada.</p>
-                <p><strong>Plan Avanzado</strong>: Más sesiones y mayor enfoque en la nutrición, perfecto para quienes buscan progresar en su entrenamiento.</p>
-                <p><strong>Plan Premium</strong>: La opción más completa, ideal para quienes buscan un acompañamiento constante y un entrenamiento intensivo.</p>
-            </div>
-        </section>
-    </section>
-    
-<!-- Footer -->
- <!-- Footer Minimalista -->
 <!-- Footer Alargado -->
 <footer>
     <div class="footer-container">
         <div class="footer-section about">
-            <h3>THE GYM</h3>
+            <h3>ValMolina Fitnees</h3>
             <p>Transforma tu cuerpo con nuestros entrenamientos personalizados. ¡Únete a nosotros y alcanza tus objetivos!</p>
         </div>
         <div class="footer-section links">
@@ -246,7 +142,7 @@
         </div>
     </div>
     <div class="footer-bottom">
-        &copy; 2024 THE GYM | Todos los derechos reservados
+        &copy; 2024 ValMolina Fitness |
     </div>
 </footer>
 

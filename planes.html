@@ -5,11 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planes de Entrenamiento</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:slnt,wght@4,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilo para el selector de moneda */
         .currency-selector {
             margin-bottom: 20px;
+        }
+        /* Estilos para el acordeón */
+        .accordion-header {
+            background-color: #f7f7f7;
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ccc;
+            margin-bottom: 5px; /* Espaciado entre los planes */
+        }
+
+        .accordion-content {
+            padding: 15px;
+            display: none; /* Ocultar contenido por defecto */
+            border: 1px solid #ccc;
+            border-top: none; /* No mostrar borde superior para que se vea como un todo */
+        }
+
+        .toggle-icon {
+            font-size: 20px;
         }
     </style>
 </head>
@@ -18,7 +43,7 @@
     <!-- Navbar -->
     <nav>
         <ul>
-            <li><a href="index.html" class="logo">THE GYM</a></li>
+            <li><a href="index.html" class="logo"><img src="./imagenes/logotipo (2).png" alt=""></a></li>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="quien-soy.html">Quién Soy</a></li>
             <li><a href="planes.html">Planes</a></li>
@@ -31,7 +56,7 @@
         </ul>
     </nav>
 
-    <h1>Planes de Entrenamiento</h1>
+    <h1 class="titulo-planes">Planes de Entrenamiento</h1>
     
     <div class="currency-selector">
         <label for="currency">Selecciona una moneda:</label>
@@ -43,24 +68,59 @@
     </div>
     
     <div class="plan" data-price-usd="30" data-price-eur="27" data-price-ars="10000">
-        <h2>Plan Básico</h2>
-        <p class="price"></p>
-        <p>Incluye acceso a rutinas básicas.</p>
-        <button class="add-to-cart" data-plan="basico" data-price="30">Agregar al carrito</button>
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            <h2>Plan Express Basic</h2>
+            <span class="toggle-icon">+</span>
+        </div>
+        <div class="accordion-content">
+            <p class="price"></p>
+            <p class="plan-p">El Plan Express Basic - SIMPLE Y SENCILLO, es ideal para aquellos que están dando sus primeros pasos en el mundo del fitness y desean establecer una base sólida para un estilo de vida saludable. Este plan está diseñado para introducir a los principiantes en rutinas de ejercicio accesibles y efectivas, que no solo mejoren su condición física, sino que también fomenten hábitos duraderos. Incluye una variedad de ejercicios de bajo impacto que se pueden realizar en casa o en el gimnasio, sin necesidad de equipo especializado. Además, el plan ofrece recomendaciones de alimentación simples para complementar la actividad física, garantizando así un enfoque equilibrado hacia el bienestar.</p>
+            <p>PLAN DE ENTRENAMIENTO + GUIA NUTRICIONAL.</p>
+            <button class="add-to-cart" data-plan="basico" data-price="30">Agregar al carrito</button>
+        </div>
     </div>
 
     <div class="plan" data-price-usd="50" data-price-eur="45" data-price-ars="15000">
-        <h2>Plan Intermedio</h2>
-        <p class="price"></p>
-        <p>Acceso a rutinas avanzadas y consultas personalizadas.</p>
-        <button class="add-to-cart" data-plan="intermedio" data-price="50">Agregar al carrito</button>
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            <h2>Plan Premium</h2>
+            <span class="toggle-icon">+</span>
+        </div>
+        <div class="accordion-content">
+            <p class="price"></p>
+            <p class="plan-p">El Plan Premium es ideal para aquellos que ya están inmersos en el mundo del fitness y buscan
+                llevar su entrenamiento y alimentación al siguiente nivel. Este plan está diseñado para adaptarse
+                a tus objetivos específicos, ya sea ganar masa muscular, perder grasa, o mejorar el rendimiento
+                general. Incluye rutinas de ejercicios personalizadas que desafían tus límites y fomentan el
+                progreso constante, además de un plan de alimentación detallado que se ajusta a tus
+                necesidades calóricas y nutricionales. Este plan no solo te ayudará a alcanzar tus metas, sino
+                que también te proporcionará las herramientas para mantener un estilo de vida saludable y
+                equilibrado a largo plazo.</p>
+            <p>PLANIFICACIÓN DE ENTRENAMIENTO + PLANIFICACIÓN NUTRICIONAL.</p>
+            <button class="add-to-cart" data-plan="intermedio" data-price="50">Agregar al carrito</button>
+        </div>
     </div>
 
     <div class="plan" data-price-usd="70" data-price-eur="63" data-price-ars="21000">
-        <h2>Plan Avanzado</h2>
-        <p class="price"></p>
-        <p>Incluye todo lo anterior más coaching individual.</p>
-        <button class="add-to-cart" data-plan="avanzado" data-price="70">Agregar al carrito</button>
+        <div class="accordion-header" onclick="toggleAccordion(this)">
+            <h2>Plan Exclusive</h2>
+            <span class="toggle-icon">+</span>
+        </div>
+        <div class="accordion-content">
+            <p class="price"></p>
+            <p class="plan-p">El plan Exclusive, es un plan de entrenamiento personalizado, con seguimiento presencial. Las
+                sesiones de entrenamiento ofrecen una experiencia única y personalizada para aquellos que
+                buscan mejorar su condición física. Un entrenador personal se dedica a diseñar un programa de
+                ejercicios específicos para cada individuo, teniendo en cuenta sus objetivos, nivel de condición
+                física y cualquier limitación física que pueda tener. Estas sesiones permiten una supervisión
+                directa y correcciones inmediatas, lo cual es crucial para asegurar la correcta ejecución de los
+                ejercicios, prevenir lesiones y maximizar los resultados. Además, la motivación y el apoyo
+                constante de un entrenador pueden ser determinantes para mantener la disciplina y el
+                compromiso con un estilo de vida saludable. En un mundo donde la tecnología a menudo nos
+                distancia, estas sesiones cara a cara representan una valiosa oportunidad para conectar y
+                enfocarse en el bienestar personal..</p>
+            <p>TU PLAN DE ENTRENAMIENTO PERSONALIZADO, CON SEGUIMIENTO PRESENCIAL.</p>
+            <button class="add-to-cart" data-plan="avanzado" data-price="70">Agregar al carrito</button>
+        </div>
     </div>
 
     <a href="carrito.html">Ir al Carrito</a>
@@ -97,12 +157,27 @@
 
         // Actualizar precios al cambiar la moneda
         currencySelector.addEventListener('change', updatePrices);
+
+        // Función para alternar el acordeón
+        function toggleAccordion(header) {
+            const content = header.nextElementSibling; // Obtiene el contenido siguiente al encabezado
+            const icon = header.querySelector('.toggle-icon'); // Obtiene el ícono dentro del encabezado
+
+            // Alterna la visibilidad del contenido
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                icon.textContent = "+"; // Cambia el ícono a "+"
+            } else {
+                content.style.display = "block";
+                icon.textContent = "-"; // Cambia el ícono a "-"
+            }
+        }
     </script>
 
     <footer>
         <div class="footer-container">
             <div class="footer-section about">
-                <h3>THE GYM</h3>
+                <h3>ValMolina Fitnees</h3>
                 <p>Transforma tu cuerpo con nuestros entrenamientos personalizados. ¡Únete a nosotros y alcanza tus objetivos!</p>
             </div>
             <div class="footer-section links">
@@ -116,7 +191,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2024 THE GYM | Todos los derechos reservados
+            &copy; 2024 ValMolina Fitness |
         </div>
     </footer>
 </body>
