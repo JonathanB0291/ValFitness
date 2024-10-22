@@ -1,10 +1,14 @@
 /* Estilos generales */
 body {
+    background-image: url('./imagenes/fondo-servicios.jpg'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Asegura que el fondo cubra todo el área */
+    background-repeat: no-repeat; /* Evita que el fondo se repita */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* El fondo permanece fijo al hacer scroll */
     font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
-    background: linear-gradient(to right, #39FF14, #568203);
     margin: 0;
     padding: 0;
     padding-top: 90px;
@@ -19,7 +23,7 @@ body {
 }
 /* Fondo y estructura */
 .header-section {
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('./imagenes/gimnasio\ gris.jpeg') no-repeat center center/cover;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)), url('./imagenes/f3.jpg') no-repeat center center/cover;
     text-align: center;
     padding: 150px 50px;
     color: white;
@@ -175,7 +179,7 @@ nav ul li a.logo {
     margin-right: 0; /* Elimina el margen derecho del logo */
 }
 nav ul li a.logo:hover {
-    background-color: green;/* Mismo efecto hover que los demás íconos */
+    background-color: #191616;/* Mismo efecto hover que los demás íconos */
     color: #fff;
 }
 
@@ -225,6 +229,9 @@ p, ul {
 #planes {
     text-align: center;
     padding: 40px 0;
+}
+.currency{
+    color: white;
 }
 #currencyDisplay {
     margin: 20px;
@@ -325,7 +332,7 @@ h2 {
 
 /* Estilo para cada plan */
 .titulo-planes{
-    color: #304231;
+    color: #30ad36;
 }
 
 .section-planes {
@@ -472,7 +479,7 @@ h2 {
 }
 
 .plan-title .subtitle {
-    font-size: 1.2em;
+    font-size: 1em;
     color: #7f8c8d; /* Color más suave para el subtítulo */
     margin-top: 5px; /* Un pequeño margen para separarlo del título */
     font-style: italic; /* Opcional: para un estilo de subtítulo */
@@ -673,7 +680,7 @@ section:hover {
 }
 
 .section-quien-soy h3 {
-    font-size: 1.8em;
+    font-size: 2em;
     margin-top: 30px;
     color: #8d8881; /* Un toque de color cálido para destacar */
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
@@ -681,10 +688,27 @@ section:hover {
 
 .section-quien-soy ul {
     list-style-type: none;
-    padding-left: 0;
+    padding: 0;
+}
+.lista-item {
+    margin-bottom: 20px; /* Espaciado entre cada elemento de la lista */
+
 }
 
+.lista-item strong {
+    margin-bottom: 10px; /* Espaciado debajo del texto en negrita */
+    display: block; /* Hace que el texto en negrita esté en su propia línea */
+}
+.resultado-descripcion {
+    margin: 0;
+    margin-top: 30px; /* Espacio adicional entre el encabezado y la descripción */
+    margin-bottom: 50px; /* Espacio adicional después de la descripción */
+}
+
+
 .section-quien-soy ul li {
+    margin-bottom: 5px; /* Espaciado debajo del texto en negrita */
+    display: block;
     margin-bottom: 15px;
     font-size: 1em;
     display: flex;
@@ -696,24 +720,38 @@ section:hover {
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
     margin-right: 10px;
-    color: #FF8C00; /* Icono en color naranja para coherencia */
+    color: #047f2d; /* Icono en color naranja para coherencia */
 }
 
 .section-quien-soy blockquote {
     background-color: rgba(255, 255, 255, 0.2);
-    border-left: 5px solid #FF8C00; /* Cita con borde naranja */
+    border-left: 5px solid #097d30; /* Cita con borde naranja */
     padding: 20px;
     margin: 20px 0;
     font-size: 1.5em;
     text-align: center;
     font-style: italic;
-    color: #FF8C00;
+    color: #097d30;
 }
 
 .blockquote:hover {
     background-color: rgba(255, 255, 255, 0.3);
     transition: background-color 0.5s ease;
 }
+.imagenes-finales {
+    display: flex; /* Permite colocar las imágenes una al lado de la otra */
+    justify-content: center; /* Centra las imágenes en el contenedor */
+    gap: 40px; /* Espacio entre las imágenes */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.imagen-articulo {
+    max-width: 180px; /* Cambia este valor según lo pequeño que quieras las imágenes */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 8px; /* Bordes redondeados (opcional) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de profundidad (opcional) */
+}
+
 #fotogaleria h1 {
     text-align: center; /* Centrado del título */
     margin: 60px 0 30px; /* Espaciado superior aumentado a 60px */
