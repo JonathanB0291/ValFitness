@@ -657,100 +657,197 @@ section:hover {
 }
 
 /* Estilos para la sección Quién Soy */
-.section-quien-soy {
-    background: linear-gradient(135deg, #f0f0f0, #f0f0f0); /* Degradado en tonos grises */
-    padding: 50px;
-    color: #333; /* Color de texto oscuro para contraste */
-    font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
-    font-size: 1rem;
-    text-align: left;
+.titulo{
+    font-size: 50px;
 }
 
+.section-quien-soy {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+/* Ajustar el tamaño del párrafo */
+#quien-soy p {
+    font-size: 18px; /* Tamaño del contenido (puedes ajustarlo según prefieras) */
+    line-height: 1.6; /* Ajusta el espaciado entre líneas para mejor legibilidad */
+    color: #333; /* Color del texto */
+}
+
+/* Ajustar el tamaño del strong dentro del párrafo */
+#quien-soy strong {
+    font-size: 20px; /* Aumenta el tamaño del texto resaltado (en negrita) */
+    color: #177336; /* Color del texto en negrita */
+}
+
+/* Ajustar el tamaño del blockquote */
+#quien-soy blockquote {
+    font-size: 22px; /* Tamaño del texto de la cita */
+    font-style: italic; /* Cursiva para el blockquote */
+    margin: 20px 0; /* Margen superior e inferior para separarlo del resto del texto */
+    color: #248306; /* Color del texto */
+}
+
+/* Ajustar el título de la sección "Quién Soy" */
+#quien-soy h2 {
+    font-size: 44px; /* Tamaño del título de la sección */
+    font-weight: bold; /* Negrita para destacar el título */
+    margin-bottom: 35px; /* Espacio entre el título y el contenido */
+    color: #177336; /* Color del título */
+}
+
+.quien-soy-content, .porque-elegirme-content {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el contenido */
+    justify-content: space-between; /* Espacio entre imagen y texto */
+    margin: 20px 0; /* Espaciado entre las secciones */
+}
+.quien-soy-text, .porque-elegirme-text {
+    max-width: 60%; /* Ajusta el ancho máximo del texto */
+}
+.porque-elegirme-content h2 {
+    margin-bottom: 10px; /* Ajusta el valor según lo cerca que quieras que esté del contenido */
+}
+/* Estilo para los elementos de la lista */
+.porque-elegirme-container {
+    display: flex; /* Usar flexbox para alinear la imagen y el texto horizontalmente */
+    align-items: flex-start; /* Alinear los elementos al inicio */
+    margin: 20px 0; /* Margen superior e inferior para la sección */
+}
+
+.porque-elegirme-container img {
+    width: 50%; /* Ancho de la imagen (ajústalo según necesites) */
+    max-width: 300px; /* Tamaño máximo de la imagen */
+    margin-right: 30px; /* Espacio entre la imagen y el texto */
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+}
+
+.porque-elegirme-text {
+    flex: 1; /* Permitir que el texto ocupe el espacio restante */
+}
+
+.porque-elegirme-text h3 {
+    margin-bottom: 20px; /* Espacio entre el título y el contenido */
+    font-size: 24px; /* Tamaño del título */
+    color: #333; /* Color del título */
+}
+
+.porque-elegirme-text .item {
+    margin-bottom: 20px; /* Espacio entre cada elemento */
+}
+
+.porque-elegirme-text .item strong {
+    display: block; /* Hace que el <strong> ocupe toda la línea */
+    margin-bottom: 8px; /* Espacio entre el título y el párrafo */
+    font-size: 18px; /* Tamaño del texto fuerte */
+    color: #15883a; /* Color del texto fuerte */
+}
+
+.porque-elegirme-text .item p {
+    margin: 0; /* Eliminar margen del párrafo */
+    line-height: 1.5; /* Espaciado entre líneas */
+    color: #555; /* Color del párrafo */
+}
+
+
+
 .section-quien-soy h2 {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    text-align: center;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    font-size: 3rem; /* Tamaño grande para el título */
+    margin-bottom: 20px; /* Espacio inferior */
+    text-align: center; /* Centra el título */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra en el texto */
 }
 
 .section-quien-soy p {
-    font-size: 1em;
-    margin-bottom: 20px;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    font-size: 1em; /* Tamaño de fuente para párrafos */
+    margin-bottom: 20px; /* Espacio inferior */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra en el texto */
 }
 
-.section-quien-soy h3 {
-    font-size: 2em;
-    margin-top: 30px;
-    color: #8d8881; /* Un toque de color cálido para destacar */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+.quien-soy-content {
+    display: flex; /* Disposición flexible para texto e imágenes */
+    align-items: flex-start; /* Alinear elementos al inicio */
+    gap: 20px; /* Espacio entre texto e imágenes */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.quien-soy-text {
+    flex: 1; /* Ocupa el espacio disponible */
+    margin-right: 20px; /* Espacio entre texto e imágenes */
+}
+.quien-soy-text, .porque-elegirme-text {
+    max-width: 60%; /* Ajusta el ancho máximo del texto */
+}
+
+.quien-soy-imagenes {
+    flex: 0 0 40%; /* Ancho fijo para las imágenes */
+    display: flex;
+    flex-direction: column; /* Disposición en columna */
+    align-items: center; /* Centra las imágenes */
+}
+
+.imagen-articulo {
+    max-width: 100%; /* Ajusta el tamaño de las imágenes a su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    margin-bottom: 15px; /* Espacio entre imágenes */
+}
+
+blockquote {
+    font-style: italic; /* Estilo de la cita */
+    margin: 20px 0; /* Espacio arriba y abajo */
+    text-align: center; /* Centra la cita */
+    color: #00BFAE; /* Color diferente para la cita */
+    border-left: 4px solid #00BFAE; /* Línea a la izquierda */
+    padding-left: 20px; /* Espacio a la izquierda del texto */
+}
+
+.resultado-descripcion {
+    margin: 0; /* Sin margen */
+    margin-top: 30px; /* Espacio superior */
+    margin-bottom: 50px; /* Espacio inferior */
 }
 
 .section-quien-soy ul {
-    list-style-type: none;
-    padding: 0;
+    list-style-type: none; /* Sin viñetas */
+    padding: 0; /* Sin padding */
 }
-.lista-item {
-    margin-bottom: 20px; /* Espaciado entre cada elemento de la lista */
-
-}
-
-.lista-item strong {
-    margin-bottom: 10px; /* Espaciado debajo del texto en negrita */
-    display: block; /* Hace que el texto en negrita esté en su propia línea */
-}
-.resultado-descripcion {
-    margin: 0;
-    margin-top: 30px; /* Espacio adicional entre el encabezado y la descripción */
-    margin-bottom: 50px; /* Espacio adicional después de la descripción */
-}
-
 
 .section-quien-soy ul li {
-    margin-bottom: 5px; /* Espaciado debajo del texto en negrita */
-    display: block;
-    margin-bottom: 15px;
-    font-size: 1em;
-    display: flex;
-    align-items: center;
+    display: flex; /* Disposición flexible */
+    align-items: center; /* Centra el contenido */
+    margin-bottom: 15px; /* Espaciado entre elementos de la lista */
 }
 
 .section-quien-soy ul li::before {
-    content: "\f058";
+    content: "\f058"; /* Icono Font Awesome */
     font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    margin-right: 10px;
-    color: #047f2d; /* Icono en color naranja para coherencia */
+    font-weight: 900; /* Peso de la fuente */
+    margin-right: 10px; /* Espacio a la derecha del icono */
+    color: #047f2d; /* Color del icono */
 }
 
-.section-quien-soy blockquote {
-    background-color: rgba(255, 255, 255, 0.2);
-    border-left: 5px solid #097d30; /* Cita con borde naranja */
-    padding: 20px;
-    margin: 20px 0;
-    font-size: 1.5em;
-    text-align: center;
-    font-style: italic;
-    color: #097d30;
-}
-
-.blockquote:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    transition: background-color 0.5s ease;
-}
 .imagenes-finales {
-    display: flex; /* Permite colocar las imágenes una al lado de la otra */
-    justify-content: center; /* Centra las imágenes en el contenedor */
+    display: flex; /* Coloca las imágenes una al lado de la otra */
+    justify-content: center; /* Centra las imágenes */
     gap: 40px; /* Espacio entre las imágenes */
     margin-top: 20px; /* Espacio superior */
 }
 
 .imagen-articulo {
-    max-width: 180px; /* Cambia este valor según lo pequeño que quieras las imágenes */
+    max-width: 180px; /* Tamaño máximo para las imágenes */
     height: auto; /* Mantiene la proporción */
-    border-radius: 8px; /* Bordes redondeados (opcional) */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar un efecto de profundidad (opcional) */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
 }
+.imagen-principal, .imagen-secundaria {
+    border-radius: 10px; 
+    max-width: 25%; /* Ajusta el ancho máximo de las imágenes */
+    height: auto; /* Mantiene la proporción de las imágenes */
+    margin-left: 20px; /* Espaciado a la izquierda de las imágenes */
+}
+
 
 #fotogaleria h1 {
     text-align: center; /* Centrado del título */
