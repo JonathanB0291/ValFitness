@@ -21,7 +21,7 @@
     <!-- Navbar -->
     <nav>
         <ul>
-            <li><a href="index.html" class="logo"><img src="./imagenes/logotipo (2).png" alt=""></a></li>
+            <li><a href="index.html" class="logo"><img src="./imagenes/WhatsApp Image 2024-10-22 at 10.23.11.jpeg" alt=""></a></li>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="quien-soy.html">Quién Soy</a></li>
             <li><a href="planes.html">Planes</a></li>
@@ -34,10 +34,10 @@
         </ul>
     </nav>
 
-    <h1>Tu Carrito</h1>
+    <h1 class="titulo-planes">Tu Carrito</h1>
     
     <div class="currency-selector">
-        <label for="currency">Selecciona una moneda:</label>
+        <label class="currency" for="currency">Selecciona una moneda:</label>
         <select id="currency">
             <option value="usd">Dólar ($)</option>
             <option value="eur">Euro (€)</option>
@@ -114,16 +114,19 @@
         renderCart();
     </script>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section about">
-                <h3>ValMolina Fitnees</h3>
-                <p>Transforma tu cuerpo con nuestros entrenamientos personalizados. ¡Únete a nosotros y alcanza tus objetivos!</p>
+<footer>
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h3>ValMolina Fitness</h3>
+            <p>Transforma tu cuerpo con nuestros entrenamientos personalizados. ¡Únete a nosotros y alcanza tus objetivos!</p>
+            <div class="footer-text">
+                &copy; 2024 ValMolina Fitness |
             </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2024 ValMolina Fitness |
-        </div>
-    </footer>
+    </div>
+    <div class="footer-bottom">
+        <img src="./imagenes/logotipo (2).png" alt="Logo" class="footer-logo">
+    </div>
+</footer>
 </body>
 </html>

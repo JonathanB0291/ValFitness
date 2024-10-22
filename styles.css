@@ -110,7 +110,7 @@ hr {
 
 /* Navbar estilos */
 nav {
-    background-color: #000000; /* Color de fondo del navbar */
+    background-color: #0b0c0b ; /* Color de fondo del navbar */
     position: fixed;
     top: 0;
     left: 0;
@@ -155,7 +155,7 @@ nav ul li a {
     display: block;
     text-decoration: none;
     padding: 10px 15px;
-    background-color: #000000;
+    background-color: #0b0c0b ;
     color: white;
     transition: background-color 0.3s ease;
     border-radius: 5px;
@@ -691,7 +691,7 @@ section:hover {
 #quien-soy h2 {
     font-size: 44px; /* Tamaño del título de la sección */
     font-weight: bold; /* Negrita para destacar el título */
-    margin-bottom: 35px; /* Espacio entre el título y el contenido */
+    margin-bottom: 50px; /* Espacio entre el título y el contenido */
     color: #177336; /* Color del título */
 }
 
@@ -733,12 +733,12 @@ section:hover {
 }
 
 .porque-elegirme-text .item {
-    margin-bottom: 20px; /* Espacio entre cada elemento */
+    margin-bottom: 35px; /* Espacio entre cada elemento */
 }
 
 .porque-elegirme-text .item strong {
     display: block; /* Hace que el <strong> ocupe toda la línea */
-    margin-bottom: 8px; /* Espacio entre el título y el párrafo */
+    margin-bottom: 25px; /* Espacio entre el título y el párrafo */
     font-size: 18px; /* Tamaño del texto fuerte */
     color: #15883a; /* Color del texto fuerte */
 }
@@ -843,9 +843,9 @@ blockquote {
 }
 .imagen-principal, .imagen-secundaria {
     border-radius: 10px; 
-    max-width: 25%; /* Ajusta el ancho máximo de las imágenes */
+    max-width: 20%; /* Ajusta el ancho máximo de las imágenes */
     height: auto; /* Mantiene la proporción de las imágenes */
-    margin-left: 20px; /* Espaciado a la izquierda de las imágenes */
+    margin-left: 10px; /* Espaciado a la izquierda de las imágenes */
 }
 
 
@@ -864,30 +864,44 @@ blockquote {
 }
 
 /* Footer */
-/* Footer Minimalista */
-/* Footer Alargado */
-/* Estilo del footer */
 footer {
     background-color: black; /* Color de fondo negro */
     color: white; /* Color del texto blanco para contraste */
     width: 100%; /* Ocupa todo el ancho de la página */
-    position: relative; /* Asegura que se mantenga en su lugar */
-    bottom: 0; /* Coloca el footer en la parte inferior */
-    padding: 20px 0; /* Espaciado vertical */
-    margin-top: 20px; /* Espacio encima del footer, si es necesario */
+    padding: 10px 0; /* Espaciado vertical */
+    margin-top: 10px; /* Espacio encima del footer */
 }
 
 .footer-container {
-    max-width: 1200px; /* Ancho máximo del contenido del footer */
-    margin: 0 auto; /* Centra el contenido dentro del footer */
-    padding: 0 20px; /* Espacio interno */
+    display: flex; /* Usar flexbox para distribuir el contenido */
+    justify-content: space-between; /* Espacio entre secciones */
+    align-items: center; /* Alineación vertical */
+    padding: 0 20px; /* Espaciado horizontal */
+}
+
+.footer-section {
+    flex: 1; /* Permite que esta sección ocupe espacio disponible */
+}
+
+.footer-text {
+    margin: 10px 0; /* Añadir margen arriba y abajo para separarlo del contenido */
+    text-align: left; /* Alinear el texto a la izquierda */
+    padding-left: 20px; /* Espacio adicional a la izquierda, si es necesario */
 }
 
 .footer-bottom {
-    text-align: center; /* Centra el texto del footer */
-    font-size: 14px; /* Ajusta el tamaño de la fuente */
-    margin-top: 10px; /* Espacio encima del footer inferior */
+    display: flex; /* Usar flexbox para alinear elementos */
+    justify-content: flex-end; /* Alinear logo a la derecha */
+    padding: 5px 20px; /* Espaciado alrededor */
+    align-items: center; /* Alineación vertical */
 }
+
+.footer-logo {
+    width: 150px; /* Cambia este valor para ajustar el ancho del logo */
+    height: auto; /* Mantener la proporción del logo */
+    margin-top: -130px;
+}
+
 
 
 /* Responsive */
