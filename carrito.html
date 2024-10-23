@@ -40,8 +40,8 @@
     <div class="currency-selector">
         <label class="currency" for="currency">Selecciona una moneda:</label>
         <select id="currency">
-            <option value="usd">Dólar ($)</option>
             <option value="eur">Euro (€)</option>
+            <option value="usd">Dólar ($)</option>
             <option value="ars">Peso Argentino (ARS)</option>
         </select>
     </div>
@@ -87,14 +87,14 @@
             let price;
 
             switch (selectedCurrency) {
-                case 'usd':
-                    price = item.price; // Precio original en USD
-                    return `$${price.toFixed(2)}`;
-                case 'eur':
-                    price = item.price * 0.9; // Ejemplo de conversión de USD a EUR
+                case 'eur': 
+                    price = item.price; // Precio original en EUR 
                     return `€${price.toFixed(2)}`;
+                case 'usd':
+                    price = item.price * 0.9; // Ejemplo de conversión de EUR a USD  
+                    return `$${price.toFixed(2)}`;
                 case 'ars':
-                    price = item.price * 350; // Ejemplo de conversión de USD a ARS
+                    price = item.price * 350; // Ejemplo de conversión de EUR a ARS
                     return `$${price.toFixed(2)} ARS`;
                 default:
                     return `$${item.price.toFixed(2)}`;
@@ -119,14 +119,19 @@
     <div class="footer-container">
         <div class="footer-section about">
             <h3>ValMolina Fitness</h3>
-            <p>Transforma tu cuerpo con nuestros entrenamientos personalizados. ¡Únete a nosotros y alcanza tus objetivos!</p>
+            <p class="inicio">Transforma tu cuerpo con nuestros entrenamientos personalizados.</p>
+            <p class="inicio">¡Únete a nosotros y alcanza tus objetivos!</p>
+            
+            <!-- Logo colocado entre los párrafos y el copyright -->
+            <a href="./fotogaleria.html" class="logo-link">
+                <img src="./imagenes/logotipo (2).png" alt="Logo" class="footer-logo">
+            </a>
+            
+            <!-- Texto de copyright -->
             <div class="footer-text">
-                &copy; 2024 VALMOLINA FITNEES |
+                &copy; 2024 VALMOLINA FITNESS |
             </div>
         </div>
-    </div>
-    <div class="footer-bottom">
-        <img src="./imagenes/logotipo (2).png" alt="Logo" class="footer-logo">
     </div>
 </footer>
 </body>

@@ -33,7 +33,7 @@ body {
 
 /* Estilo del título principal */
 .main-title {
-    font-family: 'Afacad Flux', sans-serif;
+    font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
     font-size: 4rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -48,7 +48,7 @@ body {
 
 /* Estilo del subtítulo */
 .main-subtitle {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
     font-size: 1.5rem;
     font-weight: 400;
     max-width: 700px;
@@ -276,6 +276,7 @@ p, ul {
     transform: translateY(-10px);
 }
 .plan-servicio{
+    color: #333;
     font-size: 17px;
 }
 
@@ -286,11 +287,26 @@ h2 {
 
 /* General Styling for Section Artículos */
 .section-articulos {
-    margin: 30px; /* Espaciado externo de la sección */
-    background: linear-gradient(135deg, #f0f0f0, #f0f0f0); /* Gradiente de colores suaves */
-    padding: 40px 20px;
-    border-radius: 10px;
+    display: flex;
+    flex-direction: column; /* Asegura que los artículos estén en columnas */
+    gap: 20px; /* Espacio entre artículos */
 }
+
+article {
+    display: flex; /* Permite alinear imagen y contenido horizontalmente */
+    align-items: flex-start; /* Alinea los elementos al principio */
+}
+
+.article-image {
+    width: 400px; /* Ajusta el tamaño de la imagen */
+    height: auto; /* Mantiene la proporción de la imagen */
+    margin-right: 70px; /* Espacio entre la imagen y el contenido */
+}
+
+.article-content {
+    flex: 1; /* Permite que el contenido ocupe el espacio restante */
+}
+
 
 .section-articulos h2 {
     text-align: center; /* Centrar el título */
@@ -349,7 +365,7 @@ h2 {
 .section-planes h1 {
     margin-bottom: 30px;
     color: #304231;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
 }
 
 .section-planes p {
@@ -566,11 +582,15 @@ button {
 #total-price {
     font-weight: bold;
     font-size: 1.2em;
-    color: #333;
+    color: #d6d6de;
 }
 
 p {
-    color: #333335;
+    color: #bac2bb ;
+    font-size: 15px;
+}
+.inicio{
+    color: #7f8c8d;
     font-size: 20px;
 }
 .carrito {
@@ -825,7 +845,7 @@ blockquote {
 
 .section-quien-soy ul li::before {
     content: "\f058"; /* Icono Font Awesome */
-    font-family: "Font Awesome 5 Free";
+    font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
     font-weight: 900; /* Peso de la fuente */
     margin-right: 10px; /* Espacio a la derecha del icono */
     color: #047f2d; /* Color del icono */
@@ -856,7 +876,7 @@ blockquote {
     text-align: center; /* Centrado del título */
     margin: 60px 0 30px; /* Espaciado superior aumentado a 60px */
     color: #333; /* Color de texto */
-    font-family: Arial, sans-serif; /* Fuente */
+    font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
 }
 .transformation {
     position: relative;
@@ -892,27 +912,20 @@ blockquote {
 /* Footer */
 footer {
     background-color: black; /* Color de fondo negro */
-    color: white; /* Color del texto blanco para contraste */
+    color: white; /* Color del texto blanco */
     width: 100%; /* Ocupa todo el ancho de la página */
-    padding: 10px 0; /* Espaciado vertical */
-    margin-top: 10px; /* Espacio encima del footer */
+    padding: 20px 0; /* Espaciado general del footer */
+    margin-top: 20px; /* Espacio por encima del footer */
 }
 
 .footer-container {
-    display: flex; /* Usar flexbox para distribuir el contenido */
-    justify-content: space-between; /* Espacio entre secciones */
-    align-items: center; /* Alineación vertical */
-    padding: 0 20px; /* Espaciado horizontal */
+    max-width: 1200px; /* Ancho máximo del contenido del footer */
+    margin: 0 auto; /* Centrar el contenido */
+    padding: 0 20px; /* Espaciado interior */
 }
 
 .footer-section {
-    flex: 1; /* Permite que esta sección ocupe espacio disponible */
-}
-
-.footer-text {
-    margin: 10px 0; /* Añadir margen arriba y abajo para separarlo del contenido */
-    text-align: center; /* Alinear el texto a la izquierda */
-    padding-left: 20px; /* Espacio adicional a la izquierda, si es necesario */
+    text-align: center; /* Centrar el contenido de la sección */
 }
 
 .footer-bottom {
@@ -922,10 +935,31 @@ footer {
     align-items: center; /* Alineación vertical */
 }
 
+.footer-logo-container {
+    text-align: center; /* Centrar el logo en su contenedor */
+    margin: 15px 0; /* Añadir margen para separar del texto de arriba y abajo */
+}
+
 .footer-logo {
-    width: 150px; /* Cambia este valor para ajustar el ancho del logo */
-    height: auto; /* Mantener la proporción del logo */
-    margin-top: -130px;
+    width: 150px; /* Ajusta el tamaño del logo según sea necesario */
+    height: auto; /* Mantiene las proporciones del logo */
+}
+
+.footer-text {
+    text-align: center; /* Centrar el texto de copyright */
+    margin-top: 10px; /* Espacio entre el logo y el texto de copyright */
+    font-size: 14px; /* Tamaño de fuente más pequeño para el copyright, si lo prefieres */
+    color: white; /* Asegura que el color del texto sea legible */
+}
+.logo-link {
+    background-color: transparent; /* Sin fondo */
+    cursor: pointer; /* Mantiene el cursor de enlace */
+    text-decoration: none; /* Elimina subrayado si lo tiene */
+}
+
+.logo-link:hover {
+    background-color: transparent; /* Sin cambios al hacer hover */
+    cursor: pointer; /* El enlace sigue siendo clicable */
 }
 
 
