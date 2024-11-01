@@ -70,29 +70,30 @@
         </ul>
     </nav>
 
+    
     <section id="contacto">
         <h1>Contacto</h1>
         <p>Si tienes alguna pregunta o comentario, no dudes en ponerte en contacto conmigo. ¡Estoy aquí para ayudarte!</p>
+    
+        <div class="contact-info">
+            <!-- Información de contacto adicional con iconos -->
+            <p><strong><i class="fas fa-envelope"></i> Correo Electrónico:</strong> 
+                <a href="mailto:tucorreo@ejemplo.com">tucorreo@ejemplo.com</a></p>
+            <p><strong><i class="fas fa-phone"></i> Teléfono:</strong> 
+                <a href="tel:+123456789">+1 (234) 567-89</a></p>
+        </div>
+    
         <form id="contact-form">
             <label for="name">Nombre:</label>
             <input type="text" id="name" name="name" required>
-
             <label for="email">Correo Electrónico:</label>
             <input type="email" id="email" name="email" required>
-
             <label for="message">Mensaje:</label>
             <textarea id="message" name="message" rows="5" required></textarea>
-
             <button type="submit">Enviar</button>
         </form>
-        <p id="form-message"></p>
-
-        <h2>Nuestra Ubicación</h2>
-        <div id="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509456!2d144.95373531531798!3d-37.81627997975142!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f0f5b25%3A0x5045675218ceed0!2sMelbourne%20Fitness%20Center!5e0!3m2!1sen!2sus!4v1615401382515!5m2!1sen!2sus" 
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
     </section>
+    
 
     <script>
         const form = document.getElementById('contact-form');

@@ -34,7 +34,7 @@ body {
 /* Estilo del título principal */
 .main-title {
     font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 20px;
@@ -42,7 +42,7 @@ body {
     transform: translateY(-50px);
     animation: slideDown 1s ease-out forwards;
     letter-spacing: 3px;
-    color: #00ff77; /* Color vibrante */
+    color: #a5d212; /* Color vibrante */
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -283,6 +283,11 @@ p, ul {
 h2 {
     font-size: 36px;
     margin-bottom: 40px;
+    color: #4CAF50;
+}
+.servicio-h2{
+    color: #177336;
+    font-size: 28px;
 }
 
 /* General Styling for Section Artículos */
@@ -695,6 +700,26 @@ section:hover {
     line-height: 1.6; /* Ajusta el espaciado entre líneas para mejor legibilidad */
     color: #333; /* Color del texto */
 }
+.quien-soy-text {
+    text-align: left;
+    padding-left: 20px; /* Ajusta este valor según lo necesites */
+}
+
+
+.quien-soy-p {
+    margin-bottom: 15px;
+}
+.quien-soy-p {
+    text-align: left;
+    margin-left: 20px;
+}
+
+.quien-soy-text blockquote {
+    text-align: center;
+    font-style: italic;
+    margin: 20px auto;
+}
+
 
 /* Ajustar el tamaño del strong dentro del párrafo */
 #quien-soy strong {
@@ -901,10 +926,74 @@ blockquote {
     width: 100%;
     height: auto;
 }
-#contacto h1 {
-    text-align: center; /* Centrado del título */
-    margin: 60px 0; /* Espaciado superior aumentado a 60px */
+#contacto {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: white; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
 }
+
+#contacto h1 {
+    text-align: center; /* Centra el título */
+    color: black; /* Color negro para el título */
+}
+
+#contacto p {
+    color: black; /* Color negro para los párrafos */
+    margin-bottom: 10px; /* Espaciado entre párrafos */
+}
+
+#contacto a {
+    color: black; /* Color negro para los enlaces */
+    text-decoration: none; /* Sin subrayado */
+    transition: color 0.3s; /* Transición suave para el hover */
+}
+
+#contacto a:hover {
+    color: #444; /* Color al pasar el mouse sobre el enlace */
+}
+
+#contacto form {
+    display: flex;
+    flex-direction: column; /* Mantiene el formulario en columna */
+}
+
+#contacto label {
+    margin-top: 10px; /* Espaciado superior para las etiquetas */
+    color: black; /* Color negro para las etiquetas */
+}
+
+#contacto input, #contacto textarea {
+    padding: 10px; /* Espaciado interno */
+    margin-top: 5px; /* Espaciado superior */
+    border: 1px solid #ccc; /* Borde suave */
+    border-radius: 5px; /* Bordes redondeados */
+    outline: none; /* Sin borde de enfoque */
+}
+
+#contacto input:focus, #contacto textarea:focus {
+    border-color: black; /* Cambia el color del borde al enfocar */
+}
+
+#contacto button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: black; /* Fondo negro para el botón */
+    color: white; /* Texto blanco */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el hover */
+}
+
+#contacto button:hover {
+    background-color: #444; /* Color más claro en hover */
+}
+
+
+
 .carrito{
     color: white;
 }
