@@ -110,6 +110,7 @@ hr {
 
 
 /* Navbar estilos */
+
 nav {
     background-color: #0b0c0b ; /* Color de fondo del navbar */
     position: fixed;
@@ -226,6 +227,52 @@ p, ul {
     transform: scale(1.05);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+/* Oculta el menú por defecto en pantallas pequeñas */
+#navbar {
+    display: flex;
+    list-style: none;
+}
+
+/* Menú hamburguesa solo visible en pantallas pequeñas */
+.hamburger-menu {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Para pantallas pequeñas */
+@media (max-width: 768px) {
+    #navbar {
+        display: none; /* Oculta el menú por defecto */
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+    }
+
+    #navbar.show {
+        display: flex; /* Muestra el menú cuando está activo */
+    }
+
+    /* Mostrar el menú hamburguesa */
+    .hamburger-menu {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+    }
+    
+    /* Estilos de los enlaces en el menú desplegable */
+    #navbar li {
+        padding: 10px 0;
+        width: 100%;
+    }
+}
+
 
 #planes {
     text-align: center;
@@ -1052,41 +1099,94 @@ footer {
     cursor: pointer; /* El enlace sigue siendo clicable */
 }
 
+/* Media Queries Responsivas */
 
+/* Para pantallas de hasta 768px (móviles) */
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column; /* Cambia el navbar a columna */
+    /* Navbar: ajusta los elementos para una columna */
+    nav ul {
+        display: flex;
+        flex-direction: column;
         align-items: center;
-        padding: 10px;
     }
 
-    .hero-section {
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Encabezado: centra el contenido */
+    .header-section {
         padding: 20px;
-        font-size: 1.2em; /* Ajusta el tamaño de la fuente */
+        font-size: 1.2em;
+        text-align: center;
     }
 
-    .galeria-imagen {
-        width: 100%; /* Imágenes ocupan todo el ancho */
-        margin-bottom: 10px;
+    /* Sección de servicios: ajusta las columnas */
+    .servicios-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
+    .servicio {
+        width: 90%; /* Ocupa casi todo el ancho */
+        margin-bottom: 20px;
+    }
+
+    /* Botón "Empieza Ahora": centrado y ajuste de tamaño */
+    .btn-cta {
+        display: block;
+        text-align: center;
+        margin: 20px auto;
+        width: 80%;
+        max-width: 300px;
+    }
+
+    /* Artículos: imagen y contenido en columna */
+    .section-articulos article {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .article-image {
+        width: 100%;
+    }
+
+    /* Footer: centrar y ajustar tamaños */
     .footer-container {
         text-align: center;
         padding: 15px;
     }
 }
 
-/* Para tablets (de 768px a 1024px) */
+/* Para pantallas de 768px a 1024px (tablets) */
 @media (min-width: 768px) and (max-width: 1024px) {
-    .navbar {
-        padding: 10px 20px;
+    /* Navbar */
+    nav ul {
+        display: flex;
+        justify-content: space-around;
     }
 
-    .galeria-imagen {
-        width: 48%; /* Dos imágenes por fila */
+    /* Servicios: en dos columnas */
+    .servicios-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
     }
 
-    .footer-logo {
-        width: 120px; /* Ajusta el tamaño del logo en el footer */
+    .servicio {
+        width: 90%;
+    }
+
+    /* Artículos: imagen al 70% de su ancho */
+    .article-image {
+        width: 70%;
+    }
+
+    /* Footer */
+    .footer-container {
+        padding: 20px;
+        text-align: center;
     }
 }

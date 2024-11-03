@@ -10,11 +10,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:slnt,wght@4,600&display=swap" rel="stylesheet">
     <link rel="icon" href="imagenes/logotipo (2).png" type="image/png">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para el menú en pantallas grandes */
+        nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Estilos para el menú en pantallas pequeñas */
+        .hamburger-menu {
+            display: none; /* Oculto en pantallas grandes */
+            cursor: pointer;
+        }
+
+        /* Estilos para el menú en pantallas pequeñas */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block; /* Muestra el icono hamburguesa en pantallas pequeñas */
+            }
+
+            nav ul {
+                display: none; /* Oculta el menú por defecto en pantallas pequeñas */
+                flex-direction: column;
+            }
+
+            nav ul.show {
+                display: flex; /* Muestra el menú al activar el ícono hamburguesa */
+            }
+        }
+    </style>
 </head>
 
 <body>
     <nav>
-        <ul>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul id="navbar">
             <li><a href="index.html" class="logo"><img src="./imagenes/WhatsApp Image 2024-10-22 at 10.23.11.jpeg" alt=""></a></li>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="quien-soy.html">Quién Soy</a></li>
@@ -154,4 +187,11 @@
 
 
 </body>
+<script>
+    // Función para alternar el menú hamburguesa
+    function toggleMenu() {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.toggle('show');
+    }
+</script>
 </html>
