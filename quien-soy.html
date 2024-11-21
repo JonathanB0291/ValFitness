@@ -12,24 +12,24 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-    <header>
         <!-- Navbar -->
         <nav>
-            <ul>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <button class="menu-toggle">☰</button> <!-- Menú hamburguesa -->
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul id="navbar">
                 <li><a href="index.html" class="logo"><img src="./imagenes/WhatsApp Image 2024-10-22 at 10.23.11.jpeg" alt=""></a></li>
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="quien-soy.html">Quién Soy</a></li>
                 <li><a href="planes.html">Planes</a></li>
-                <li><a href="fotogaleria.html">Fotogalería</a></li>
                 <li><a href="carrito.html">Carrito</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="https://instagram.com" target="_blank" class="instagram-link">
+                <li><a href="https://www.instagram.com/valmolinafitness/profilecard/?igsh=MXJ6Mm11MXVpbWVqbA%3D%3D" target="_blank" class="instagram-link">
                     <i class="fab fa-instagram"></i>
                 </a></li> 
             </ul>
         </nav>
-    </header>
 
     <main>
         <!-- Sección de Quién Soy -->
@@ -71,24 +71,24 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-section about">
-                <h3>Val Molina Fitness</h3>
-                <p class="inicio">¡Únete a nosotros y alcanza tus objetivos!</p>
-                
-                <!-- Logo colocado entre los párrafos y el copyright -->
-                <a href="./fotogaleria.html" class="logo-link">
-                    <img src="./imagenes/logotipo (2).png" alt="Logo" class="footer-logo">
-                </a>
-                
-                <!-- Texto de copyright -->
-                <div class="footer-text">
-                    &copy; 2024 VAL MOLINA FITNESS |
-                </div>
+</header>
+<footer>
+    <div class="footer-container">
+        <div class="footer-section about">
+            <h3>Val Molina Fitness</h3>
+            <p class="inicio">¡Únete a nosotros y alcanza tus objetivos!</p>
+            
+            <!-- Logo colocado entre los párrafos y el copyright -->
+            <a href="./planes.html" class="logo-link">
+                <img src="./imagenes/logotipo (2).png" alt="Logo" class="footer-logo">
+            </a>
+            
+            <!-- Texto de copyright -->
+            <div class="footer-text">
+                &copy; 2024 VAL MOLINA FITNESS |
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>

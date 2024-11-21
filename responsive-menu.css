@@ -1,0 +1,88 @@
+/* Estilos generales para el menú hamburguesa y el navbar */
+nav {
+    position: relative;
+}
+
+/* El menú hamburguesa solo se ve en pantallas pequeñas */
+.hamburger-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Estilos del ícono hamburguesa */
+.hamburger-menu i {
+    font-size: 30px;
+    color: white;
+}
+
+/* Estilos del menú en pantallas grandes (horizontal) */
+#navbar {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Estilos para los elementos del menú */
+#navbar li {
+    padding: 10px;
+}
+
+/* Enlaces del menú */
+#navbar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+/* Efecto hover en los enlaces */
+#navbar a:hover {
+    color: #28a745; /* Verde */
+}
+
+/* Estilos específicos para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Mostrar el ícono hamburguesa */
+    .hamburger-menu {
+        display: block;
+    }
+
+    /* El menú se oculta por defecto */
+    #navbar {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #333;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    /* Mostrar el menú cuando se activa */
+    #navbar.show {
+        display: flex;
+    }
+
+    /* Espaciado en los elementos del menú en móvil */
+    #navbar li {
+        padding: 15px 0;
+    }
+
+    /* Enlaces en el menú móvil */
+    #navbar a {
+        font-size: 1.2em;
+        color: white;
+    }
+
+    /* Efecto hover en el menú móvil */
+    #navbar a:hover {
+        background-color: #28a745;
+    }
+}

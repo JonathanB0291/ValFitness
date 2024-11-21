@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:slnt,wght@4,600&display=swap" rel="stylesheet">
-    <link rel="icon" href="imagenes/logotipo (2).png" type="image/png">
+    <link rel="icon" href="imagenes/logotipo (2).png" type="image/png" sizes="48x48" href="favicon-64x64.png">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilo interno para contacto */
@@ -56,15 +56,18 @@
 
     <!-- Navbar -->
     <nav>
-        <ul>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <button class="menu-toggle">☰</button> <!-- Menú hamburguesa -->
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul id="navbar">
             <li><a href="index.html" class="logo"><img src="./imagenes/WhatsApp Image 2024-10-22 at 10.23.11.jpeg" alt=""></a></li>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="quien-soy.html">Quién Soy</a></li>
             <li><a href="planes.html">Planes</a></li>
-            <li><a href="fotogaleria.html">Fotogalería</a></li>
             <li><a href="carrito.html">Carrito</a></li>
             <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="https://instagram.com" target="_blank" class="instagram-link">
+            <li><a href="https://www.instagram.com/valmolinafitness/profilecard/?igsh=MXJ6Mm11MXVpbWVqbA%3D%3D" target="_blank" class="instagram-link">
                 <i class="fab fa-instagram"></i>
             </a></li> 
         </ul>
@@ -78,9 +81,9 @@
         <div class="contact-info">
             <!-- Información de contacto adicional con iconos -->
             <p><strong><i class="fas fa-envelope"></i> Correo Electrónico:</strong> 
-                <a href="mailto:tucorreo@ejemplo.com">tucorreo@ejemplo.com</a></p>
+                <a href="mailto:tucorreo@ejemplo.com">valmolinafitness@gmail.com</a></p>
             <p><strong><i class="fas fa-phone"></i> Teléfono:</strong> 
-                <a href="tel:+123456789">+1 (234) 567-89</a></p>
+                <a href="tel:+123456789">+34677537269</a></p>
         </div>
     
         <form id="contact-form">
@@ -123,7 +126,7 @@
             <p class="inicio">¡Únete a nosotros y alcanza tus objetivos!</p>
             
             <!-- Logo colocado entre los párrafos y el copyright -->
-            <a href="./fotogaleria.html" class="logo-link">
+            <a href="./planes.html" class="logo-link">
                 <img src="./imagenes/logotipo (2).png" alt="Logo" class="footer-logo">
             </a>
             

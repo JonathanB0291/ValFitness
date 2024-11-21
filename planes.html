@@ -1,254 +1,325 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VAL MOLINA FITNESS</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:slnt,wght@4,600&display=swap" rel="stylesheet">
-    <link rel="icon" href="imagenes/logotipo (2).png" type="image/png">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Estilo para el selector de moneda */
-        .currency-selector {
-            margin-bottom: 20px;
-        }
-        /* Estilos para el acordeón */
-        .accordion-header {
-            background-color: #f7f7f7;
-            padding: 15px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border: 1px solid #ccc;
-            margin-bottom: 5px; /* Espaciado entre los planes */
-        }
 
-        .accordion-content {
-            padding: 15px;
-            display: none; /* Ocultar contenido por defecto */
-            border: 1px solid #ccc;
-            border-top: none; /* No mostrar borde superior para que se vea como un todo */
-        }
-
-        .toggle-icon {
-            font-size: 20px;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navbar -->
-    <nav>
-        <ul>
-            <li><a href="index.html" class="logo"><img src="./imagenes/WhatsApp Image 2024-10-22 at 10.23.11.jpeg" alt=""></a></li>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="quien-soy.html">Quién Soy</a></li>
-            <li><a href="planes.html">Planes</a></li>
-            <li><a href="fotogaleria.html">Fotogalería</a></li>
-            <li><a href="carrito.html">Carrito</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="https://instagram.com" target="_blank" class="instagram-link">
-                <i class="fab fa-instagram"></i>
-            </a></li> 
-        </ul>
-    </nav>
-
-    <h1 class="titulo-planes">Planes de Entrenamiento</h1>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>VAL MOLINA FITNESS</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:slnt,wght@4,600&display=swap" rel="stylesheet">
+        <link rel="icon" href="imagenes/logotipo (2).png" type="image/png">
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            /* Estilos para el menú en pantallas grandes */
+            nav ul {
+                display: flex;
+                list-style: none;
+                padding: 0;
+            }
     
-    <div class="currency-selector">
-        <label class="currency" for="currency">Selecciona una moneda:</label>
-        <select id="currency">
-            <option value="eur">Euro (€)</option>
-            <option value="usd">Dólar ($)</option>
-            <option value="ars">Peso Argentino (ARS)</option>
-        </select>
-    </div>
+            /* Estilos para el menú en pantallas pequeñas */
+            .hamburger-menu {
+                display: none;
+                cursor: pointer;
+            }
     
-    <div class="plan"  data-price-eur="100" data-price-usd="109" data-price-ars="133000">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-            <div class="plan-title">
-                <h2>Plan Express Basic</h2>
-                <p class="subtitle">Ideal para principiantes en el mundo del fitness.</p> <!-- Cambié la clase a 'subtitle' para un estilo específico -->
-            </div>
-            <span class="toggle-icon">+</span>
-        </div>
-        <div class="accordion-content">
-            <p class="price destacado">€100</p> <!-- Destacando el precio -->
-            <ul class="plan-ul">
-                <li class="plan-p"><span class="check"></span><strong></strong> Incluye</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Plan de Entrenamiento</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Guía Nutricional</li>
-            </ul>
-            <button class="add-to-cart" data-plan="basico" data-price="100">Agregar al carrito</button>
-        </div>
-    </div>
-    
-
-    <div class="plan"  data-price-eur="80" data-price-usd="88" data-price-ars="133000">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-            <div class="plan-title">
-                <h2>Plan Premium 1</h2>
-                <p class="subtitle">Alimentacion : personalizada segun tus objetivos.</p> <!-- Cambié la clase a 'subtitle' para un estilo específico -->
-            </div>
-            <span class="toggle-icon">+</span>
-        </div>
-        <div class="accordion-content">
-            <p class="price destacado">€80</p> <!-- Destacando el precio -->
-            <ul class="plan-ul">
-                <li class="plan-p"><span class="check"></span><strong></strong>Incluye</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Plan Nutricional</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Consultoria</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Control Mensual</li>
-            </ul>
-            <p class="plan-p"><strong>Servicio de consultoría con horarios flexibles, destinado a ayudar al cliente a resolver cualquier duda que pueda surgir.</strong></p>
-            <p class="price destacado" class="plan-p"><strong>Promoción por 3 meses: €180</strong></p>
-            <button class="add-to-cart" data-plan="premium" data-price="80">Agregar al carrito</button>
-        </div>
-    </div>
-    <div class="plan"  data-price-eur="80" data-price-usd="88" data-price-ars="133000">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-            <div class="plan-title">
-                <h2>Plan Premium 2</h2>
-                <p class="subtitle">Entrenamiento personalizado.</p> <!-- Cambié la clase a 'subtitle' para un estilo específico -->
-            </div>
-            <span class="toggle-icon">+</span>
-        </div>
-        <div class="accordion-content">
-            <p class="price destacado">€80</p> <!-- Destacando el precio -->
-            <ul class="plan-ul">
-                <li class="plan-p"><span class="check"></span><strong></strong>Incluye</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Planificacion de Entrenamiento</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Consultoria</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Control Mensual</li>
-            </ul>
-            <p class="plan-p"><strong>Servicio de consultoría con horarios flexibles, destinado a ayudar al cliente a resolver cualquier duda que pueda surgir.</strong></p>
-            <p class="price destacado" class="plan-p"><strong>Promoción por 3 meses: €180</strong></p>
-            <button class="add-to-cart" data-plan="basico" data-price="100">Agregar al carrito</button>
-        </div>
-    </div>
-    <div class="plan"  data-price-eur="120" data-price-usd="88" data-price-ars="133000">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-            <div class="plan-title">
-                <h2>Plan Premium Duo</h2>
-                <p class="subtitle">Lleva tu entrenamiento y alimentación a otro nivel.</p> <!-- Cambié la clase a 'subtitle' para un estilo específico -->
-            </div>
-            <span class="toggle-icon">+</span>
-        </div>
-        <div class="accordion-content">
-            <p class="price destacado">€120</p> <!-- Destacando el precio -->
-            <ul class="plan-ul">
-                <li class="plan-p"><span class="check"></span><strong></strong> Incluye</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Planificacion de Entrenamiento</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Plan Nutricional</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Consultoria</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Control Mensual</li>
-            </ul>
-            <p class="plan-p"><strong>Servicio de consultoría con horarios flexibles, destinado a ayudar al cliente a resolver cualquier duda que pueda surgir.</strong></p>
-            <p class="price destacado" class="plan-p"><strong>Promoción por 3 meses: €280</strong></p>
-            <button class="add-to-cart" data-plan="basico" data-price="100">Agregar al carrito</button>
-        </div>
-    </div>
-    
-    
-
-    <div class="plan"  data-price-eur="460" data-price-usd="88" data-price-ars="133000">
-        <div class="accordion-header" onclick="toggleAccordion(this)">
-            <div class="plan-title">
-                <h2>Plan Exclusive</h2>
-                <p class="subtitle">La motivación que necesitas para alcanzar tus metas. Entrenamiento presencial.</p> <!-- Cambié la clase a 'subtitle' para un estilo específico -->
-            </div>
-            <span class="toggle-icon">+</span>
-        </div>
-        <div class="accordion-content">
-            <p class="price destacado">€460</p> <!-- Destacando el precio -->
-            <ul class="plan-ul">
-                <li class="plan-p"><span class="check"></span><strong></strong> Incluye</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Planificacion de Entrenamiento con seguimiento presencial</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Planificacion Nutricional</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Consultoria</li>
-                <li class="plan-p"><span class="check">✓</span><strong></strong> Control Mensual</li>
-            </ul>
-            <p class="plan-p"><strong>Servicio de consultoría con horarios flexibles, destinado a ayudar al cliente a resolver cualquier duda que pueda surgir.</strong></p>
-            <p class="price destacado" class="plan-p"><strong>Promoción por 3 meses: €1120</strong></p>
-            <li class="plan-p"><span class="check"></span><strong></strong> Precio por hora: €20</li>
-            <li class="plan-p"><span class="check"></span><strong></strong> Precio por semana: €80</li>
-            <button class="add-to-cart" data-plan="basico" data-price="100">Agregar al carrito</button>
-        </div>
-    </div>
-    
-
-    <a class="carrito" href="carrito.html">Ir al Carrito</a>
-
-    <script src="app.js"></script>
-    <script>
-        const currencySelector = document.getElementById('currency');
-        const plans = document.querySelectorAll('.plan');
-
-        // Función para actualizar los precios según la moneda seleccionada
-        function updatePrices() {
-            const selectedCurrency = currencySelector.value;
-
-            plans.forEach(plan => {
-                const priceElement = plan.querySelector('.price');
-                const price = plan.getAttribute(`data-price-${selectedCurrency}`);
-                
-                switch (selectedCurrency) {
-                    case 'eur':
-                        priceElement.textContent = `Precio: €${price}`;
-                        break;
-                    case 'usd':
-                        priceElement.textContent = `Precio: $${price}`;
-                        break;
-                    case 'ars':
-                        priceElement.textContent = `Precio: $${price} ARS`;
-                        break;
+            /* Estilos para el menú en pantallas pequeñas */
+            @media (max-width: 768px) {
+                .hamburger-menu {
+                    display: block;
                 }
+                nav ul {
+                    display: none;
+                    flex-direction: column;
+                }
+                nav ul.show {
+                    display: flex;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <nav>
+            <div class="hamburger-menu" onclick="toggleMenu()">
+                <button class="menu-toggle">☰</button> <!-- Menú hamburguesa -->
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul id="navbar">
+                <li><a href="index.html" class="logo"><img src="./imagenes/WhatsApp Image 2024-10-22 at 10.23.11.jpeg" alt=""></a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="quien-soy.html">Quién Soy</a></li>
+                <li><a href="planes.html">Planes</a></li>
+                <li><a href="carrito.html">Carrito</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="https://www.instagram.com/valmolinafitness/profilecard/?igsh=MXJ6Mm11MXVpbWVqbA%3D%3D" target="_blank" class="instagram-link">
+                    <i class="fab fa-instagram"></i>
+                </a></li> 
+            </ul>
+        </nav>
+    
+        <!-- Sección de Planes -->
+        <section class="plans-section">
+            <div class="plans-container">
+                <h1>Planes de Entrenamiento</h1>
+                <p>Escoge el plan que mejor se adapte a tus necesidades. ¡Empezamos juntos!</p>
+    
+                <!-- Plan 1 - Express Basic -->
+                <div class="plan" data-price-eur="80" data-price-usd="85">
+                    <div class="accordion-header">
+                        <div class="plan-title">
+                            <h2>Plan Express Basic</h2>
+                            <p class="subtitle">Ideal para principiantes</p>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="price destacado">€80</p>
+                        <ul class="plan-ul">
+                            <li class="plan-p"><span class="check">✓</span> Plan de Entrenamiento Personalizado</li>
+                            <li class="plan-p"><span class="check">✓</span> Guía Nutricional Básica</li>
+                        </ul>
+                        <button class="add-to-cart" data-plan="express-basic" data-price="80">Agregar al carrito</button>
+                    </div>
+                </div>
+    
+                <!-- Plan 2 - Premium 1 -->
+                <div class="plan" data-price-eur="60" data-price-usd="65">
+                    <div class="accordion-header">
+                        <div class="plan-title">
+                            <h2>Plan Premium 1</h2>
+                            <p class="subtitle">Para un progreso más rápido</p>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="price destacado">€60</p>
+                        <ul class="plan-ul">
+                            <li class="plan-p"><span class="check">✓</span> Plan Nutricional</li>
+                            <li class="plan-p"><span class="check">✓</span> Control Mensual</li>
+                            <li class="plan-p"><span class="check">✓</span> Servicio de consultoría con horarios flexibles, destinado a ayudar al cliente
+                            a resolver cualquier duda que pueda surgir.</li>
+                        <button class="add-to-cart" data-plan="premium-1" data-price="60">Agregar al carrito</button>
+                    </ul>
+                    </div>
+                </div>
+    
+                <!-- Plan 3 - Premium 2 -->
+                <div class="plan" data-price-eur="60" data-price-usd="65">
+                    <div class="accordion-header">
+                        <div class="plan-title">
+                            <h2>Plan Premium 2</h2>
+                            <p class="subtitle">Para alcanzar tus metas rápidamente</p>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="price destacado">€60</p>
+                        <ul class="plan-ul">
+                            <li class="plan-p"><span class="check">✓</span> Planificacion de Entrenamiento</li>
+                            <li class="plan-p"><span class="check">✓</span> Servicio de consultoría con horarios flexibles, destinado a ayudar al cliente a resolver cualquier duda que pueda surgir.</li>
+                            <li class="plan-p"><span class="check">✓</span> Control Mensual</li>
+                        </ul>
+                        <button class="add-to-cart" data-plan="premium-2" data-price="60">Agregar al carrito</button>
+                    </div>
+                </div>
+    
+                <!-- Plan 4 - Premium Duo -->
+                <div class="plan" data-price-eur="90" data-price-usd="95">
+                    <div class="accordion-header">
+                        <div class="plan-title">
+                            <h2>Plan Premium Duo</h2>
+                            <p class="subtitle">Busca llevar tu entrenamiento y alimentación al siguiente nivel</p>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="price destacado">€90</p>
+                        <ul class="plan-ul">
+                            <li class="plan-p"><span class="check">✓</span> Planificacion de Entrenamiento</li>
+                            <li class="plan-p"><span class="check">✓</span> Plan Nutricional</li>
+                            <li class="plan-p"><span class="check">✓</span> Control Mensual</li>
+                            <li class="plan-p"><span class="check">✓</span> Servicio de consultoría con horarios flexibles, destinado a ayudar al cliente a resolver cualquier duda que pueda surgir.</li>
+                        </ul>
+                        <button class="add-to-cart" data-plan="premium-duo" data-price="90">Agregar al carrito</button>
+                    </div>
+                </div>
+    
+                <!-- Plan 5 - Exclusive -->
+                <div class="plan" data-price-eur="400" data-price-usd="425">
+                    <div class="accordion-header">
+                        <div class="plan-title">
+                            <h2>Plan Exclusive</h2>
+                            <p class="subtitle">El paquete todo incluido</p>
+                        </div>
+                    </div>
+                    <div class="accordion-content">
+                        <p class="price destacado">€400</p>
+                        <ul class="plan-ul">
+                            <li class="plan-p"><span class="check">✓</span> Planificacion de Entrenamiento</li>
+                            <li class="plan-p"><span class="check">✓</span> Plan Nutricional</li>
+                            <li class="plan-p"><span class="check">✓</span> Control Mensual</li>
+                            <li class="plan-p"><span class="check">✓</span> Servicio de consultoría con horarios flexibles, destinado a ayudar al cliente a resolver cualquier duda que pueda surgir.</li>
+                        </ul>
+                        <button class="add-to-cart" data-plan="exclusive" data-price="400">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="promo-section">
+            <div class="promo-container">
+                <h1>Promociones por 3 Meses</h1>
+                <p>¡Aprovecha estas ofertas especiales para llevar tu entrenamiento al siguiente nivel!</p>
+        
+                <!-- Promo 1 - Premium 1 -->
+                <div class="promo" data-price-eur="150" data-price-usd="160">
+                    <div class="promo-header">
+                        <div class="promo-title">
+                            <h2>Plan Premium 1 - Promoción 3 Meses</h2>
+                            <p class="subtitle">Alimentacion : personalizada segun tus objetivos.</p>
+                        </div>
+                    </div>
+                    <div class="promo-content">
+                        <p class="promo-price destacado">€150</p>
+                        <ul class="promo-ul">
+                            <li><span class="check">✓</span> Entrenamiento Avanzado</li>
+                            <li><span class="check">✓</span> Asesoramiento Nutricional</li>
+                        </ul>
+                        <button class="add-to-cart" data-plan="premium-1-promo" data-price="150">Agregar al carrito</button>
+                    </div>
+                </div>
+        
+                <!-- Promo 2 - Premium 2 -->
+                <div class="promo" data-price-eur="150" data-price-usd="165">
+                    <div class="promo-header">
+                        <div class="promo-title">
+                            <h2>Plan Premium 2 - Promoción 3 Meses</h2>
+                            <p class="subtitle">Entrenamiento personalizado.</p>
+                        </div>
+                    </div>
+                    <div class="promo-content">
+                        <p class="promo-price destacado">€150</p>
+                        <ul class="promo-ul">
+                            <li><span class="check">✓</span> Entrenamiento Avanzado</li>
+                            <li><span class="check">✓</span> Asesoramiento Nutricional</li>
+                        </ul>
+                        <button class="add-to-cart" data-plan="premium-2-promo" data-price="150">Agregar al carrito</button>
+                    </div>
+                </div>
+        
+                <!-- Promo 3 - Premium Duo -->
+                <div class="promo" data-price-eur="240" data-price-usd="255">
+                    <div class="promo-header">
+                        <div class="promo-title">
+                            <h2>Plan Premium Duo - Promoción 3 Meses</h2>
+                            <p class="subtitle">Entrena con un amigo con descuento</p>
+                        </div>
+                    </div>
+                    <div class="promo-content">
+                        <p class="promo-price destacado">€240</p>
+                        <ul class="promo-ul">
+                            <li><span class="check">✓</span> Lleva tu entrenamiento y alimentación a otro nivel.</li>
+                        </ul>
+                        <button class="add-to-cart" data-plan="premium-duo-promo" data-price="240">Agregar al carrito</button>
+                    </div>
+                </div>
+        
+                <!-- Promo 4 - Exclusive -->
+                <div class="promo" data-price-eur="1000" data-price-usd="1060">
+                    <div class="promo-header">
+                        <div class="promo-title">
+                            <h2>Plan Exclusive - Promoción 3 Meses</h2>
+                            <p class="subtitle">La motivación que necesitas para alcanzar tus metas. Entrenamiento presencial.</p>
+                        </div>
+                    </div>
+                    <div class="promo-content">
+                        <p class="promo-price destacado">€1000</p>
+                        <ul class="promo-ul">
+                            <li><span class="check">✓</span> Entrenamiento Personalizado Exclusivo</li>
+                            <li><span class="check">✓</span> Nutrición avanzada</li>
+                        </ul>
+                        <button class="add-to-cart" data-plan="exclusive-promo" data-price="1000">Agregar al carrito</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    
+        <!-- Footer -->
+        <footer>
+            <div class="footer-container">
+                <div class="footer-section about">
+                    <h3>Val Molina Fitness</h3>
+                    <p class="inicio">¡Únete a nosotros y alcanza tus objetivos!</p>
+                    <a href="./fotogaleria.html" class="logo-link">
+                        <img src="./imagenes/logotipo (2).png" alt="Logo" class="footer-logo">
+                    </a>
+                    <div class="footer-text">
+                        &copy; 2024 VAL MOLINA FITNESS |
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+        <!-- JavaScript -->
+        <script src="app.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const headers = document.querySelectorAll('.accordion-header');
+
+            headers.forEach(header => {
+                header.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('.toggle-icon');
+
+                    if (content.style.display === "block") {
+                        content.style.display = "none";
+                        icon.textContent = "+";  
+                    } else {
+                        content.style.display = "block";
+                        icon.textContent = "-";  
+                    }
+                });
             });
+
+            document.querySelectorAll('.add-to-cart').forEach(button => {
+                button.addEventListener('click', function() {
+                    const plan = this.dataset.plan;
+                    const price = this.dataset.price;
+                    alert(`Plan ${plan} agregado al carrito. Precio: €${price}`);
+                });
+            });
+        });
+
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
         }
+        document.addEventListener("DOMContentLoaded", function () {
+    const headers = document.querySelectorAll('.accordion-header, .promo-header');
 
-        // Actualizar precios al cargar la página
-        updatePrices();
+    headers.forEach(header => {
+        header.addEventListener('click', function () {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector('.toggle-icon, .promo-toggle-icon');
 
-        // Actualizar precios al cambiar la moneda
-        currencySelector.addEventListener('change', updatePrices);
-
-        // Función para alternar el acordeón
-        function toggleAccordion(header) {
-            const content = header.nextElementSibling; // Obtiene el contenido siguiente al encabezado
-            const icon = header.querySelector('.toggle-icon'); // Obtiene el ícono dentro del encabezado
-
-            // Alterna la visibilidad del contenido
             if (content.style.display === "block") {
                 content.style.display = "none";
-                icon.textContent = "+"; // Cambia el ícono a "+"
+                icon.textContent = "+";
             } else {
                 content.style.display = "block";
-                icon.textContent = "-"; // Cambia el ícono a "-"
+                icon.textContent = "-";
             }
-        }
-    </script>
+        });
+    });
 
-<footer>
-    <div class="footer-container">
-        <div class="footer-section about">
-            <h3>Val Molina Fitness</h3>
-            <p class="inicio">¡Únete a nosotros y alcanza tus objetivos!</p>
-            
-            <!-- Logo colocado entre los párrafos y el copyright -->
-            <a href="./fotogaleria.html" class="logo-link">
-                <img src="./imagenes/logotipo (2).png" alt="Logo" class="footer-logo">
-            </a>
-            
-            <!-- Texto de copyright -->
-            <div class="footer-text">
-                &copy; 2024 VAL MOLINA FITNESS |
-            </div>
-        </div>
-    </div>
-</footer>
-</body>
-</html>
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+        button.addEventListener('click', function () {
+            const plan = this.dataset.plan;
+            const price = this.dataset.price;
+            alert(`Promoción ${plan} agregada al carrito. Precio: €${price}`);
+        });
+    });
+});
+
+    </script>
+    </body>
+    </html>

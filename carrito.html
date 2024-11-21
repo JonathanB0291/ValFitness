@@ -21,15 +21,18 @@
 
     <!-- Navbar -->
     <nav>
-        <ul>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <button class="menu-toggle">☰</button> <!-- Menú hamburguesa -->
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul id="navbar">
             <li><a href="index.html" class="logo"><img src="./imagenes/WhatsApp Image 2024-10-22 at 10.23.11.jpeg" alt=""></a></li>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="quien-soy.html">Quién Soy</a></li>
             <li><a href="planes.html">Planes</a></li>
-            <li><a href="fotogaleria.html">Fotogalería</a></li>
             <li><a href="carrito.html">Carrito</a></li>
             <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="https://instagram.com" target="_blank" class="instagram-link">
+            <li><a href="https://www.instagram.com/valmolinafitness/profilecard/?igsh=MXJ6Mm11MXVpbWVqbA%3D%3D" target="_blank" class="instagram-link">
                 <i class="fab fa-instagram"></i>
             </a></li> 
         </ul>
@@ -50,7 +53,6 @@
     <p>Total: <span id="total-price"></span></p>
 
     <button id="empty-cart">Vaciar Carrito</button>
-
     <a class="carrito" href="index.html">Volver al Inicio</a>
     <br>
     <a class="carrito" href="checkout.html">Finalizar Compra</a>
@@ -63,24 +65,43 @@
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
         let total = 0;
 
-        function renderCart() {
-            cartItemsContainer.innerHTML = '';
-            total = 0; // Reset total before calculating
-
-            if (cart.length === 0) {
-                cartItemsContainer.innerHTML = '<p>El carrito está vacío</p>';
+        function addToCart(plan, price) {
+            // Verificar si el plan ya está en el carrito
+            const existingItem = cart.find(item => item.plan === plan);
+            if (existingItem) {
+                existingItem.quantity += 1; // Incrementar cantidad si ya existe
             } else {
-                cart.forEach(item => {
-                    const itemElement = document.createElement('div');
-                    const priceInSelectedCurrency = getPriceInSelectedCurrency(item);
-                    itemElement.textContent = `${item.plan} - ${priceInSelectedCurrency} x ${item.quantity}`;
-                    cartItemsContainer.appendChild(itemElement);
-                    total += item.price * item.quantity; // Calculando total en dólares
-                });
-                const totalInSelectedCurrency = getPriceInSelectedCurrency({ price: total });
-                totalPriceElement.textContent = totalInSelectedCurrency;
+                // Agregar nuevo item si no existe
+                cart.push({ plan, price, quantity: 1 });
             }
+            // Guardar en localStorage y actualizar la vista del carrito
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+            alert(`${plan} ha sido añadido al carrito`);
         }
+
+        function renderCart() {
+    cartItemsContainer.innerHTML = '';
+    total = 0;
+
+    if (cart.length === 0) {
+        cartItemsContainer.innerHTML = '<p>El carrito está vacío</p>';
+    } else {
+        cart.forEach(item => {
+            const itemElement = document.createElement('div');
+            const priceInSelectedCurrency = getPriceInSelectedCurrency(item);
+            itemElement.textContent = `${item.plan} - ${priceInSelectedCurrency} x ${item.quantity}`;
+            cartItemsContainer.appendChild(itemElement);
+            total += item.price * item.quantity; // Calculando total en euros
+        });
+        const totalInSelectedCurrency = getPriceInSelectedCurrency({ price: total });
+        totalPriceElement.textContent = totalInSelectedCurrency;
+    }
+
+    // Guardar carrito actualizado en localStorage con clave consistente
+    localStorage.setItem('carrito', JSON.stringify(cart));
+}
+
 
         function getPriceInSelectedCurrency(item) {
             const selectedCurrency = currencySelector.value;
@@ -88,16 +109,11 @@
 
             switch (selectedCurrency) {
                 case 'eur': 
-                    price = item.price; // Precio original en EUR 
+                    price = item.price; // Precio en EUR
                     return `€${price.toFixed(2)}`;
                 case 'usd':
-                    price = item.price * 0.9; // Ejemplo de conversión de EUR a USD  
+                    price = item.price * 1.1; // Conversión de EUR a USD 
                     return `$${price.toFixed(2)}`;
-                case 'ars':
-                    price = item.price * 350; // Ejemplo de conversión de EUR a ARS
-                    return `$${price.toFixed(2)} ARS`;
-                default:
-                    return `$${item.price.toFixed(2)}`;
             }
         }
 
@@ -115,23 +131,23 @@
         renderCart();
     </script>
 
-<footer>
-    <div class="footer-container">
-        <div class="footer-section about">
-            <h3>Val Molina Fitness</h3>
-            <p class="inicio">¡Únete a nosotros y alcanza tus objetivos!</p>
-            
-            <!-- Logo colocado entre los párrafos y el copyright -->
-            <a href="./fotogaleria.html" class="logo-link">
-                <img src="./imagenes/logotipo (2).png" alt="Logo" class="footer-logo">
-            </a>
-            
-            <!-- Texto de copyright -->
-            <div class="footer-text">
-                &copy; 2024 VAL MOLINA FITNESS |
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>Val Molina Fitness</h3>
+                <p class="inicio">¡Únete a nosotros y alcanza tus objetivos!</p>
+                
+                <!-- Logo en el footer -->
+                <a href="./planes.html" class="logo-link">
+                    <img src="./imagenes/logotipo (2).png" alt="Logo" class="footer-logo">
+                </a>
+                
+                <div class="footer-text">
+                    &copy; 2024 VAL MOLINA FITNESS |
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+    <script src="carrito.js"></script>
 </body>
 </html>
