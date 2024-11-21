@@ -273,7 +273,7 @@ p, ul {
     }
 
     #navbar.show {
-        display: flex; /* Muestra el menú cuando está activo */
+        display: grid; /* Muestra el menú cuando está activo */
     }
 
     /* Mostrar el menú hamburguesa */
