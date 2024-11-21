@@ -111,6 +111,10 @@
     <a class="carrito" href="checkout.html">Finalizar Compra</a>
 
     <script>
+        function toggleMenu() {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.toggle('show');
+        }
         const cartItemsContainer = document.getElementById('cart-items');
         const totalPriceElement = document.getElementById('total-price');
         const emptyCartButton = document.getElementById('empty-cart');
@@ -201,12 +205,7 @@
             </div>
         </div>
     </footer>
-    <script>
-        function toggleMenu() {
-        const navbar = document.getElementById('navbar');
-        navbar.classList.toggle('show');
-        }
-    </script>
+    
     <script src="carrito.js"></script>
 </body>
 </html>
