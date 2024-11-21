@@ -64,7 +64,7 @@ nav {
 
     /* Mostrar el menú cuando se activa */
     #navbar.show {
-        display: flex;
+        display: grid;
     }
 
     /* Espaciado en los elementos del menú en móvil */

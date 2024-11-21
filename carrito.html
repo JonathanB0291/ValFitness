@@ -15,6 +15,60 @@
         .currency-selector {
             margin-bottom: 20px;
         }
+         /* Estilos para el menú en pantallas grandes */
+         nav ul {
+            display: flex;
+            list-style: none;
+            padding: 0;
+        }
+
+        /* Estilos para el menú en pantallas pequeñas */
+        .hamburger-menu {
+            display: none; /* Oculto en pantallas grandes */
+            cursor: pointer;
+        }
+
+        /* Estilos para el menú en pantallas pequeñas */
+        @media (max-width: 768px) {
+            .hamburger-menu {
+                display: block; /* Muestra el icono hamburguesa en pantallas pequeñas */
+            }
+
+            nav ul {
+                display: none; /* Oculta el menú por defecto en pantallas pequeñas */
+                flex-direction: column;
+            }
+
+            nav ul.show {
+                display: flex; /* Muestra el menú al activar el ícono hamburguesa */
+            }
+
+            .navbar-links {
+                display: none; /* Oculto por defecto */
+                flex-direction: column;
+                text-align: center;
+                position: absolute;
+                width: 100%;
+                top: 50px;
+                left: 0;
+                padding: 0; /* Elimina el padding predeterminado */
+            }
+            .navbar-links li {
+    margin: 0; /* Elimina márgenes */
+    padding: 3px 0; /* Ajusta el padding entre los enlaces */
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    display: block; /* Hace que el enlace ocupe toda la línea */
+    padding: 5px 20px; /* Ajusta el padding para que estén más cerca */
+}
+
+            .navbar-links.show {
+                display: flex; /* Muestra al activar */
+            }
+        }
     </style>
 </head>
 <body>
@@ -22,11 +76,11 @@
     <!-- Navbar -->
     <nav>
         <div class="hamburger-menu" onclick="toggleMenu()">
-            <button class="menu-toggle">☰</button> <!-- Menú hamburguesa -->
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars"></i> <!-- Ícono de menú -->
         </div>
-        <ul id="navbar">
-            <li><a href="index.html" class="logo"><img src="./imagenes/WhatsApp Image 2024-10-22 at 10.23.11.jpeg" alt=""></a></li>
+        
+        <ul id="navbar" class="navbar-links">
+            <li><a href="index.html" class="logo"><img src="./imagenes/WhatsApp Image 2024-10-22 at 10.23.11.jpeg" alt="Logo"></a></li>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="quien-soy.html">Quién Soy</a></li>
             <li><a href="planes.html">Planes</a></li>
@@ -45,7 +99,6 @@
         <select id="currency">
             <option value="eur">Euro (€)</option>
             <option value="usd">Dólar ($)</option>
-            <option value="ars">Peso Argentino (ARS)</option>
         </select>
     </div>
 
@@ -148,6 +201,12 @@
             </div>
         </div>
     </footer>
+    <script>
+        function toggleMenu() {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.toggle('show');
+        }
+    </script>
     <script src="carrito.js"></script>
 </body>
 </html>
