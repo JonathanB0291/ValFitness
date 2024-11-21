@@ -5,11 +5,8 @@ nav {
 
 /* El menú hamburguesa solo se ve en pantallas pequeñas */
 .hamburger-menu {
-    display: none; /* Oculto por defecto */
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 10px;
 }
 
 /* Estilos del ícono hamburguesa */

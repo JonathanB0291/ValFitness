@@ -38,6 +38,20 @@
             nav ul.show {
                 display: flex; /* Muestra el menú al activar el ícono hamburguesa */
             }
+            .navbar-links {
+                display: none; /* Oculto por defecto */
+                flex-direction: column;
+                text-align: center;
+                background-color: #333;
+                position: absolute;
+                width: 100%;
+                top: 50px; /* Ajusta según el diseño */
+                eft: 0;
+}
+
+            .navbar-links.show {
+                display: flex; /* Muestra al activar */
+}
         }
     </style>
 </head>
@@ -45,10 +59,10 @@
 <body>
     <nav>
         <div class="hamburger-menu" onclick="toggleMenu()">
-            <button class="menu-toggle">☰</button> <!-- Menú hamburguesa -->
-            <i class="fas fa-bars"></i>
+            <i class="fas fa-bars"></i> <!-- Ícono de menú -->
         </div>
-        <ul id="navbar">
+        
+        <ul id="navbar" class="navbar-links">
             <li><a href="index.html" class="logo"><img src="./imagenes/WhatsApp Image 2024-10-22 at 10.23.11.jpeg" alt=""></a></li>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="quien-soy.html">Quién Soy</a></li>
@@ -188,13 +202,18 @@
 
 </body>
 <script>
-    // Seleccionamos el botón de menú y los enlaces
-    const toggleButton = document.querySelector('.menu-toggle');
-    const navbarLinks = document.querySelector('.navbar-links');
+      function toggleMenu() {
+        const navbar = document.getElementById('navbar');
+        navbar.classList.toggle('show');
+    }
+    // Selecciona el menú hamburguesa y los enlaces del navbar
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navbar = document.querySelector('#navbar');
 
-    // Agregamos el evento para abrir/cerrar el menú
-    toggleButton.addEventListener('click', () => {
-        navbarLinks.classList.toggle('show');
-    });
+// Evento para alternar el menú
+hamburgerMenu.addEventListener('click', () => {
+    navbar.classList.toggle('show');
+});
+
 </script>
 </html>
