@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:slnt,wght@4,600&display=swap" rel="stylesheet">
-    <link rel="icon" href="imagenes/logotipo (2).png" type="image/png" sizes="48x48" href="favicon-64x64.png">
+    <link rel="icon" href="imagenes/logotipo (2).png" type="image/png" sizes="48x48">
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Estilo interno para contacto */
@@ -45,60 +45,37 @@
         #contacto button:hover {
             background-color: #218838;
         }
-        /* Estilos para el menú en pantallas grandes */
-        nav ul {
-            display: flex;
-            list-style: none;
-            padding: 0;
+        #form-message {
+            margin-top: 20px;
+            text-align: center;
         }
-
-        /* Estilos para el menú en pantallas pequeñas */
-        .hamburger-menu {
-            display: none; /* Oculto en pantallas grandes */
-            cursor: pointer;
-        }
-
-        /* Estilos para el menú en pantallas pequeñas */
-        @media (max-width: 768px) {
-            .hamburger-menu {
-                display: block; /* Muestra el icono hamburguesa en pantallas pequeñas */
-            }
-
-            nav ul {
-                display: none; /* Oculta el menú por defecto en pantallas pequeñas */
-                flex-direction: column;
-            }
-
-            nav ul.show {
-                display: flex; /* Muestra el menú al activar el ícono hamburguesa */
-            }
-
-            .navbar-links {
-                display: none; /* Oculto por defecto */
-                flex-direction: column;
-                text-align: center;
-                position: absolute;
-                width: 100%;
-                top: 50px;
-                left: 0;
-                padding: 0; /* Elimina el padding predeterminado */
-            }
-            .navbar-links li {
-    margin: 0; /* Elimina márgenes */
-    padding: 3px 0; /* Ajusta el padding entre los enlaces */
+        .contact-info {
+    background-color: transparent !important; /* Sin fondo */
+    padding: 10px;
+    text-align: left;
+}
+.contact-info p {
+    background-color: transparent !important;
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
 }
 
-.navbar-links a {
-    color: white;
+.contact-info i {
+    color: #28a745; /* Color verde solo para los íconos */
+    margin-right: 5px;
+}
+
+.contact-info a {
+    color: #007bff; /* Color azul para los enlaces */
     text-decoration: none;
-    display: block; /* Hace que el enlace ocupe toda la línea */
-    padding: 5px 20px; /* Ajusta el padding para que estén más cerca */
 }
 
-            .navbar-links.show {
-                display: flex; /* Muestra al activar */
-            }
-        }
+.contact-info a:hover {
+    text-decoration: underline;
+    color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
     </style>
 </head>
 <body>
@@ -121,21 +98,19 @@
             </a></li> 
         </ul>
     </nav>
-    
 
-    
+    <!-- Sección de contacto -->
     <section id="contacto">
         <h1>Contacto</h1>
         <p>Si tienes alguna pregunta o comentario, no dudes en ponerte en contacto conmigo. ¡Estoy aquí para ayudarte!</p>
-    
+
         <div class="contact-info">
-            <!-- Información de contacto adicional con iconos -->
             <p><strong><i class="fas fa-envelope"></i> Correo Electrónico:</strong> 
-                <a href="mailto:tucorreo@ejemplo.com">valmolinafitness@gmail.com</a></p>
+                <a href="mailto:valmolinafitness@gmail.com">valmolinafitness@gmail.com</a></p>
             <p><strong><i class="fas fa-phone"></i> Teléfono:</strong> 
-                <a href="tel:+123456789">+34677537269</a></p>
+                <a href="tel:+34677537269">+34677537269</a></p>
         </div>
-    
+
         <form id="contact-form">
             <label for="name">Nombre:</label>
             <input type="text" id="name" name="name" required>
@@ -145,54 +120,63 @@
             <textarea id="message" name="message" rows="5" required></textarea>
             <button type="submit">Enviar</button>
         </form>
+
+        <!-- Contenedor para el mensaje de éxito -->
+        <div id="form-message"></div>
     </section>
-    
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section about">
+                <h3>Val Molina Fitness</h3>
+                <p class="inicio">¡Únete a nosotros y alcanza tus objetivos!</p>
+                
+                <a href="./planes.html" class="logo-link">
+                    <img src="./imagenes/logotipo (2).png" alt="Logo" class="footer-logo">
+                </a>
+                
+                <div class="footer-text">
+                    &copy; 2024 VAL MOLINA FITNESS |
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script>
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('show');
+        }
+
         const form = document.getElementById('contact-form');
         const formMessage = document.getElementById('form-message');
 
         form.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
+            event.preventDefault(); // Evita el envío real del formulario
 
-            // Validación básica
+            // Obtener los valores del formulario
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Validar campos vacíos
             if (name === '' || email === '' || message === '') {
                 formMessage.textContent = 'Por favor, completa todos los campos.';
                 formMessage.style.color = 'red';
             } else {
-                formMessage.textContent = '¡Gracias por tu mensaje, ' + name + '! Nos pondremos en contacto contigo pronto.';
+                // Mostrar mensaje de éxito
+                formMessage.textContent = `¡Gracias por tu mensaje, ${name}! Nos pondremos en contacto contigo pronto.`;
                 formMessage.style.color = 'green';
+
+                // Restablecer el formulario
                 form.reset();
+
+                // Ocultar el mensaje después de 5 segundos
+                setTimeout(() => {
+                    formMessage.textContent = '';
+                }, 5000);
             }
         });
     </script>
-<footer>
-    <div class="footer-container">
-        <div class="footer-section about">
-            <h3>Val Molina Fitness</h3>
-            <p class="inicio">¡Únete a nosotros y alcanza tus objetivos!</p>
-            
-            <!-- Logo colocado entre los párrafos y el copyright -->
-            <a href="./planes.html" class="logo-link">
-                <img src="./imagenes/logotipo (2).png" alt="Logo" class="footer-logo">
-            </a>
-            
-            <!-- Texto de copyright -->
-            <div class="footer-text">
-                &copy; 2024 VAL MOLINA FITNESS |
-            </div>
-        </div>
-    </div>
-</footer>
-<script>
-    function toggleMenu() {
-    const navbar = document.getElementById('navbar');
-    navbar.classList.toggle('show');
-        }
-</script>
-
 </body>
 </html>

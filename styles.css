@@ -117,7 +117,7 @@ nav {
     flex-wrap: wrap; /* Permite que pasen a una nueva línea si no caben */
     justify-content: space-between; /* Espacia los elementos */
     align-items: center; /* Alinea verticalmente los elementos */
-    padding: 10px 20px; /* Espaciado interno */
+    padding: 5px 10px; /* Espaciado interno */
     position: fixed;
     top: 0;
     width: 100%;
@@ -274,6 +274,7 @@ p, ul {
 
     #navbar.show {
         display: grid; /* Muestra el menú cuando está activo */
+        max-width: 100%;
     }
 
     /* Mostrar el menú hamburguesa */
@@ -698,9 +699,9 @@ p {
 /* Estilos para el formulario de pago */
 form {
     max-width: 90%; /* Reduce el ancho en pantallas pequeñas */
-    width: 400px; /* Valor máximo */
+    width: 500px; /* Valor máximo */
     background-color: white;
-    padding: 40px;
+    padding: 50px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     position: relative; /* En lugar de fixed o absolute */
@@ -771,6 +772,9 @@ section {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     border-radius: 10px; /* Bordes redondeados */
     transition: transform 0.3s ease; /* Efecto suave en las secciones */
+}
+.promo-section{
+    max-width: 75%;
 }
 section:hover {
     transform: translateY(-10px); /* Efecto de levantar la sección al hacer hover */
