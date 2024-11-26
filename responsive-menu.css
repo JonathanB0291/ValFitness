@@ -8,7 +8,7 @@ body {
 }
 
 img {
-    max-width: 100%;
+    max-width: 150%;
     height: auto;
     display: block;
 }
@@ -29,7 +29,7 @@ img {
 
     .quien-soy {
         flex-direction: column;
-        text-align: center;
+        text-align:right;
     }
 
     .quien-soy-text, .quien-soy-image {
@@ -84,7 +84,7 @@ img {
 
     footer {
         height: 100vh; /* Ocupa toda la altura de la ventana */
-        display: contents;
+        display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column; /* Organiza el contenido del footer en columna */

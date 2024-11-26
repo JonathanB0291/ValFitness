@@ -12,21 +12,21 @@ body {
     font-size: 1rem;
     margin: 0;
     padding: 0;
-    padding-top: 90px;
+    padding-top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     flex-direction: column;
     transition: background-color 0.5s ease;
-    background-color: #fafafa; /* Color de fondo claro */
+    background-color: #3a3838; /* Color de fondo claro */
     box-shadow: inset 0 0 10px rgba(0,0,0,0.5); /* Sombra interna */
-    margin-top: 80px; /* Ajusta este valor según la altura del navbar */
+    margin-top: 90px; /* Ajusta este valor según la altura del navbar */
 }
 /* Fondo y estructura */
 .header-section {
     text-align: center;
-    padding: 150px 50px;
+    padding: 170px 70px;
     color: white;
     position: relative;
     overflow: hidden;
@@ -246,7 +246,7 @@ p, ul {
     display: none;
     font-size: 1.5em;
     cursor: pointer;
-    color: #333;
+    color: #f9f7f7;
 }
 .menu-toggle {
     display: none; /* Oculto en pantallas grandes */
@@ -670,6 +670,7 @@ p {
 .inicio{
     color: #7f8c8d;
     font-size: 20px;
+
 }
 .carrito {
     display: inline-block;
@@ -770,9 +771,9 @@ input:focus, textarea:focus {
     margin-top: 10px;
 }
 section {
-    padding: 50px;
+    padding: 10px;
     margin: 20px auto;
-    max-width: 1200px;
+    max-width: 100%;
     background-color: white; /* Fondo blanco para las secciones */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
     border-radius: 10px; /* Bordes redondeados */
@@ -793,7 +794,6 @@ section:hover {
 .section-quien-soy {
     display: flex;
     flex-direction: column;
-    margin: 20px;
 }
 /* Ajustar el tamaño del párrafo */
 #quien-soy p {
@@ -845,7 +845,7 @@ section:hover {
 }
 
 .quien-soy-content, .porque-elegirme-content {
-    display: flex;
+    display: contents;
     align-items: center; /* Alinea verticalmente el contenido */
     justify-content: space-between; /* Espacio entre imagen y texto */
     margin: 20px 0; /* Espaciado entre las secciones */
@@ -993,19 +993,11 @@ blockquote {
 }
 .imagen-principal, .imagen-secundaria {
     border-radius: 10px; 
-    max-width: 20%; /* Ajusta el ancho máximo de las imágenes */
+    max-width: 30%; /* Ajusta el ancho máximo de las imágenes */
     height: auto; /* Mantiene la proporción de las imágenes */
     margin-left: 10px; /* Espaciado a la izquierda de las imágenes */
 }
 
-
-#fotogaleria h1 {
-    font-size: clamp(1.5rem, 4vw, 3rem);
-    text-align: center; /* Centrado del título */
-    margin: 60px 0 30px; /* Espaciado superior aumentado a 60px */
-    color: #333; /* Color de texto */
-    font-family: 'Oswald', Helvetica, Arial, Lucida, sans-serif;
-}
 .transformation {
     position: relative;
 }
