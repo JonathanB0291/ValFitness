@@ -84,7 +84,7 @@ img {
 
     footer {
         height: 100vh; /* Ocupa toda la altura de la ventana */
-        display: flex;
+        display: contents;
         justify-content: center;
         align-items: center;
         flex-direction: column; /* Organiza el contenido del footer en columna */
