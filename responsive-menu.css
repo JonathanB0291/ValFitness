@@ -1,85 +1,100 @@
-/* Estilos generales para el menú hamburguesa y el navbar */
-nav {
-    position: relative;
-}
+/* responsive.css */
 
-/* El menú hamburguesa solo se ve en pantallas pequeñas */
-.hamburger-menu {
-    font-size: 1.5rem;
-    padding: 10px;
-}
-
-/* Estilos del ícono hamburguesa */
-.hamburger-menu i {
-    font-size: 30px;
-    color: white;
-}
-
-/* Estilos del menú en pantallas grandes (horizontal) */
-#navbar {
-    display: flex;
-    list-style: none;
+/* Ajustes generales */
+body {
+    margin: 0;
     padding: 0;
-    justify-content: space-around;
-    align-items: center;
+    box-sizing: border-box;
 }
 
-/* Estilos para los elementos del menú */
-#navbar li {
-    padding: 10px;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* Enlaces del menú */
-#navbar a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1.1em;
-    text-transform: uppercase;
-}
+/* ---- Responsividad para dispositivos pequeños ---- */
 
-/* Efecto hover en los enlaces */
-#navbar a:hover {
-    color: #28a745; /* Verde */
-}
-
-/* Estilos específicos para pantallas pequeñas */
-@media (max-width: 768px) {
-    /* Mostrar el ícono hamburguesa */
-    .hamburger-menu {
-        display: block;
+/* Para pantallas menores o iguales a 1024px (Tablets y menores) */
+@media (max-width: 1024px) {
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    /* El menú se oculta por defecto */
-    #navbar {
-        display: none;
+    .navbar a {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .quien-soy {
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: #333;
-        width: 100%;
-        padding: 10px 0;
         text-align: center;
     }
 
-    /* Mostrar el menú cuando se activa */
-    #navbar.show {
+    .quien-soy-text, .quien-soy-image {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .galeria {
         display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+/* Para pantallas menores o iguales a 768px (Teléfonos) */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        display: none; /* Oculto por defecto para el menú hamburguesa */
     }
 
-    /* Espaciado en los elementos del menú en móvil */
-    #navbar li {
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .navbar.active {
+        display: flex; /* Mostrar el menú al hacer clic */
+    }
+
+    .planes-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    footer {
+        text-align: center;
+    }
+
+    .footer-logo, .footer-links {
+        margin: 10px 0;
+    }
+}
+
+/* Para pantallas menores o iguales a 480px (Teléfonos más pequeños) */
+@media (max-width: 480px) {
+    .navbar a {
+        font-size: 12px;
+    }
+
+    .quien-soy-text {
+        padding: 0 10px;
+    }
+
+    footer {
         padding: 15px 0;
-    }
-
-    /* Enlaces en el menú móvil */
-    #navbar a {
-        font-size: 1.2em;
-        color: white;
-    }
-
-    /* Efecto hover en el menú móvil */
-    #navbar a:hover {
-        background-color: #28a745;
     }
 }
