@@ -41,6 +41,7 @@
             }
 
             .navbar-links {
+                transition: all 0.3s ease;
                 display: none; /* Oculto por defecto */
                 flex-direction: column;
                 text-align: center;
@@ -66,13 +67,17 @@
                 display: flex; /* Muestra al activar */
             }
         }
+        .logo img {
+    max-width: 120px;
+    height: auto;
+}
     </style>
 </head>
 
 <body>
     <nav>
-        <div class="hamburger-menu" onclick="toggleMenu()">
-            <i class="fas fa-bars"></i> <!-- Ícono de menú -->
+        <div class="hamburger-menu" onclick="toggleMenu()" aria-expanded="false" aria-controls="navbar">
+            <i class="fas fa-bars"></i>
         </div>
         
         <ul id="navbar" class="navbar-links">
